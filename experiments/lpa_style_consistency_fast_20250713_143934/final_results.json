@@ -1,0 +1,38 @@
+[
+  {
+    "prompt_id": "A001",
+    "prompt": "A tiger and a spaceship in cyberpunk style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T14:39:35.600088",
+    "parsed_prompt": {
+      "original_prompt": "A tiger and a spaceship in cyberpunk style",
+      "object_tokens": [
+        "a tiger",
+        "a spaceship",
+        "tiger",
+        "spaceship"
+      ],
+      "style_tokens": [
+        "cyberpunk",
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a tiger": 0.8,
+        "a spaceship": 0.8,
+        "tiger": 0.7,
+        "spaceship": 0.7,
+        "cyberpunk": 0.9,
+        "style": 0.9
+      },
+      "prompt_hash": "b3d77f2e",
+      "complexity": "high"
+    },
+    "lpa": {
+      "images": [
+        "PIL_Image_0"
+      ],
+      "best_image": "PIL_Image_best",
+      "attention_maps": {},
+      "parsed_prompt": 

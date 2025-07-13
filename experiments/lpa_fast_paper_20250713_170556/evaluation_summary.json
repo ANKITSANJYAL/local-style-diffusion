@@ -1,0 +1,27 @@
+{
+  "total_prompts": 50,
+  "methods": {
+    "lpa": {
+      "style_consistency": {
+        "mean": 0.21703386930127938,
+        "std": 0.012645477494258733,
+        "median": 0.21495022624731064,
+        "min": 0.1888594925403595,
+        "max": 0.24973471462726593,
+        "count": 50
+      },
+      "clip_score": {
+        "mean": 0.30926831424236295,
+        "std": 0.03234569756688578,
+        "median": 0.30866657197475433,
+        "min": 0.20183950662612915,
+        "max": 0.3795176148414612,
+        "count": 50
+      }
+    },
+    "baselines": {}
+  },
+  "comparisons": {},
+  "category_analysis": {},
+  "complexity_analysis": {}
+}

@@ -1,0 +1,13 @@
+{
+  "lpa": {
+    "error": "'ParsedPrompt' object has no attribute 'get'"
+  },
+  "baselines": {
+    "vanilla_sdxl": {
+      "clip_score": 0.33971425890922546
+    },
+    "high_cfg_sdxl": {
+      "clip_score": 0.2979327142238617
+    }
+  }
+}

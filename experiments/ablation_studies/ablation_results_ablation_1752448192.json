@@ -1,0 +1,39 @@
+{
+  "ablation_study_id": "ablation_1752448192",
+  "config_file": "configs/experiment_config_ablation.yaml",
+  "timestamp": "2025-07-13 19:09:52",
+  "variants": {
+    "baseline": {
+      "variant_name": "baseline",
+      "error": "/Users/ankitsanjyal/Desktop/Projects/Qiskit/miniconda3/bin/python: can't open file '/Users/ankitsanjyal/Desktop/Projects/local-style-diffusion/scripts/run_experiment.py': [Errno 2] No such file or directory\n"
+    },
+    "objects_first": {
+      "variant_name": "objects_first",
+      "error": "/Users/ankitsanjyal/Desktop/Projects/Qiskit/miniconda3/bin/python: can't open file '/Users/ankitsanjyal/Desktop/Projects/local-style-diffusion/scripts/run_experiment.py': [Errno 2] No such file or directory\n"
+    },
+    "style_first": {
+      "variant_name": "style_first",
+      "error": "/Users/ankitsanjyal/Desktop/Projects/Qiskit/miniconda3/bin/python: can't open file '/Users/ankitsanjyal/Desktop/Projects/local-style-diffusion/scripts/run_experiment.py': [Errno 2] No such file or directory\n"
+    },
+    "simultaneous": {
+      "variant_name": "simultaneous",
+      "error": "/Users/ankitsanjyal/Desktop/Projects/Qiskit/miniconda3/bin/python: can't open file '/Users/ankitsanjyal/Desktop/Projects/local-style-diffusion/scripts/run_experiment.py': [Errno 2] No such file or directory\n"
+    },
+    "early_injection": {
+      "variant_name": "early_injection",
+      "error": "/Users/ankitsanjyal/Desktop/Projects/Qiskit/miniconda3/bin/python: can't open file '/Users/ankitsanjyal/Desktop/Projects/local-style-diffusion/scripts/run_experiment.py': [Errno 2] No such file or directory\n"
+    },
+    "late_injection": {
+      "variant_name": "late_injection",
+      "error": "/Users/ankitsanjyal/Desktop/Projects/Qiskit/miniconda3/bin/python: can't open file '/Users/ankitsanjyal/Desktop/Projects/local-style-diffusion/scripts/run_experiment.py': [Errno 2] No such file or directory\n"
+    }
+  },
+  "summary": {
+    "total_variants": 6,
+    "successful_variants": 0,
+    "failed_variants": 6,
+    "metrics_comparison": {},
+    "best_variant": null,
+    "worst_variant": null
+  }
+}

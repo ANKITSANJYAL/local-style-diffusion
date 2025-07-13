@@ -1,0 +1,32 @@
+{
+  "prompt": "A tiger and a spaceship in cyberpunk style",
+  "negative_prompt": "",
+  "config": {
+    "num_inference_steps": 20,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 2,
+    "injection_timesteps": [
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "object_layers": [
+      "down_blocks.0",
+      "down_blocks.1",
+      "down_blocks.2"
+    ],
+    "style_layers": [
+      "mid_block",
+      "up_blocks.0",
+      "up_blocks.1",
+      "up_blocks.2"
+    ],
+    "injection_strength": 1.0,
+    "save_attention_maps": true
+  },
+  "seed": null
+}

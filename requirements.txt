@@ -1,0 +1,52 @@
+# Core ML/DL Libraries
+torch>=2.0.0,<2.8.0
+torchvision>=0.15.0,<0.23.0
+diffusers>=0.21.0
+transformers>=4.30.0
+accelerate>=0.20.0
+
+# Image Processing
+Pillow>=9.5.0
+opencv-python>=4.8.0,<4.12.0
+scikit-image>=0.21.0
+
+# NLP and Text Processing
+spacy>=3.6.0,<3.9.0
+nltk>=3.8.0
+
+# Evaluation Metrics
+lpips>=0.1.4
+# clip-by-openai>=1.0  # Removed due to PyTorch version conflict
+open-clip-torch>=2.20.0
+# dinov2>=1.0.0  # Removed due to Python 3.9 incompatibility
+
+# Data Processing
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+wandb>=0.15.0
+
+# Configuration and Utilities
+PyYAML>=6.0
+tqdm>=4.65.0
+click>=8.1.0
+python-dotenv>=1.0.0
+
+# Jupyter and Development
+jupyter>=1.0.0
+ipykernel>=6.25.0
+notebook>=6.5.0
+
+# Research Tools
+tensorboard>=2.13.0
+mlflow>=2.5.0
+
+# Additional Utilities
+requests>=2.31.0
+timm>=0.9.0
+einops>=0.6.0 

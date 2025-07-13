@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "description": "Test prompts for Local Prompt Adaptation (LPA) evaluation",
+    "total_prompts": 50,
+    "categories": 5,
+    "created": "2024-01-01",
+    "version": "1.0"
+  },
+  "prompts": [
+    {
+      "id": "A001",
+      "category": "simple_multi_object",
+      "prompt": "A tiger and a spaceship in cyberpunk style",
+      "objects": ["tiger", "spaceship"],
+      "style": ["cyberpunk"],
+      "complexity": "medium"
+    },
+    {
+      "id": "A002",
+      "category": "simple_multi_object",
+      "prompt": "A dog on a hoverboard in synthwave style",
+      "objects": ["dog", "hoverboard"],
+      "style": ["synthwave"],
+      "complexity": "medium"
+    },
+    {
+      "id": "A003",
+      "category": "simple_multi_object",
+      "prompt": "A cat and a robot in steampunk style",
+      "objects": ["cat", "robot"],
+      "style": ["steampunk"],
+      "complexity": "medium"
+    },
+    {
+      "id": "A004",
+      "category": "simple_multi_object",
+      "prompt": "A bird and a car in art deco style",
+      "objects": ["bird", "car"],
+      "style": ["art deco"],
+      "complexity": "medium"
+    },
+    {
+      "id": "A005",
+      "category": "simple_multi_object",
+      "prompt": "A fish and a submarine in underwater style",
+      "objects": ["fish", "submarine"],
+      "style": ["underwater"],
+      "complexity": "medium"
+    },
+    {
+      "id": "A006",
+      "category": "simple_multi_object",
+      "prompt": "A butterfly and a flower in watercolor style",
+      "objects": ["butterfly", "flower"],
+      "style": ["watercolor"],
+      "complexity": "low"
+    },
+    {
+      "id": "A007",
+      "category": "simple_multi_object",
+      "prompt": "A dragon and a castle in fantasy style",
+      "objects": ["dragon", "castle"],
+      "style": ["fantasy"],
+      "complexity": "medium"
+    },
+    {
+      "id": "A008",
+      "category": "simple_multi_object",
+      "prompt": "A penguin and an iceberg in polar style",
+      "objects": ["penguin", "iceberg"],
+      "style": ["polar"],
+      "complexity": "low"
+    },
+    {
+      "id": "A009",
+      "category": "simple_multi_object",
+      "prompt": "A bee and a hive in honeycomb style",
+      "objects": ["bee", "hive"],
+      "style": ["honeycomb"],
+      "complexity": "low"
+    },
+    {
+      "id": "A010",
+      "category": "simple_multi_object",
+      "prompt": "A shark and a shipwreck in oceanic style",
+      "objects": ["shark", "shipwreck"],
+      "style": ["oceanic"],
+      "complexity": "medium"
+    },
+    {
+      "id": "B001",
+      "category": "scene_object_style",
+      "prompt": "A waterfall in the background and a temple in ukiyo-e style",
+      "objects": ["waterfall", "temple"],
+      "style": ["ukiyo-e"],
+      "complexity": "high"
+    },
+    {
+      "id": "B002",
+      "category": "scene_object_style",
+      "prompt": "A city skyline and a flying dragon in fantasy art style",
+      "objects": ["city skyline", "flying dragon"],
+      "style": ["fantasy art"],
+      "complexity": "high"
+    },
+    {
+      "id": "B003",
+      "category": "scene_object_style",
+      "prompt": "A mountain range and a hot air balloon in impressionist style",
+      "objects": ["mountain range", "hot air balloon"],
+      "style": ["impressionist"],
+      "complexity": "high"
+    },
+    {
+      "id": "B004",
+      "category": "scene_object_style",
+      "prompt": "A forest and a unicorn in magical realism style",
+      "objects": ["forest", "unicorn"],
+      "style": ["magical realism"],
+      "complexity": "high"
+    },
+    {
+      "id": "B005",
+      "category": "scene_object_style",
+      "prompt": "A desert and a pyramid in ancient Egyptian style",
+      "objects": ["desert", "pyramid"],
+      "style": ["ancient Egyptian"],
+      "complexity": "high"
+    },
+    {
+      "id": "B006",
+      "category": "scene_object_style",
+      "prompt": "A beach and a mermaid in tropical style",
+      "objects": ["beach", "mermaid"],
+      "style": ["tropical"],
+      "complexity": "medium"
+    },
+    {
+      "id": "B007",
+      "category": "scene_object_style",
+      "prompt": "A volcano and a phoenix in fire style",
+      "objects": ["volcano", "phoenix"],
+      "style": ["fire"],
+      "complexity": "medium"
+    },
+    {
+      "id": "B008",
+      "category": "scene_object_style",
+      "prompt": "A glacier and a polar bear in arctic style",
+      "objects": ["glacier", "polar bear"],
+      "style": ["arctic"],
+      "complexity": "medium"
+    },
+    {
+      "id": "B009",
+      "category": "scene_object_style",
+      "prompt": "A canyon and a eagle in southwestern style",
+      "objects": ["canyon", "eagle"],
+      "style": ["southwestern"],
+      "complexity": "medium"
+    },
+    {
+      "id": "B010",
+      "category": "scene_object_style",
+      "prompt": "A coral reef and a sea turtle in marine style",
+      "objects": ["coral reef", "sea turtle"],
+      "style": ["marine"],
+      "complexity": "medium"
+    },
+    {
+      "id": "C001",
+      "category": "multi_human_poses",
+      "prompt": "A samurai and a monk meditating in cel-shaded style",
+      "objects": ["samurai", "monk"],
+      "style": ["cel-shaded"],
+      "complexity": "high"
+    },
+    {
+      "id": "C002",
+      "category": "multi_human_poses",
+      "prompt": "A ballerina and a robot dancing in Pixar style",
+      "objects": ["ballerina", "robot"],
+      "style": ["Pixar"],
+      "complexity": "high"
+    },
+    {
+      "id": "C003",
+      "category": "multi_human_poses",
+      "prompt": "A knight and a wizard casting spells in medieval style",
+      "objects": ["knight", "wizard"],
+      "style": ["medieval"],
+      "complexity": "high"
+    },
+    {
+      "id": "C004",
+      "category": "multi_human_poses",
+      "prompt": "A chef and a waiter serving food in culinary style",
+      "objects": ["chef", "waiter"],
+      "style": ["culinary"],
+      "complexity": "medium"
+    },
+    {
+      "id": "C005",
+      "category": "multi_human_poses",
+      "prompt": "A painter and a sculptor creating art in renaissance style",
+      "objects": ["painter", "sculptor"],
+      "style": ["renaissance"],
+      "complexity": "high"
+    },
+    {
+      "id": "C006",
+      "category": "multi_human_poses",
+      "prompt": "A astronaut and a alien communicating in sci-fi style",
+      "objects": ["astronaut", "alien"],
+      "style": ["sci-fi"],
+      "complexity": "high"
+    },
+    {
+      "id": "C007",
+      "category": "multi_human_poses",
+      "prompt": "A ninja and a spy sneaking in noir style",
+      "objects": ["ninja", "spy"],
+      "style": ["noir"],
+      "complexity": "medium"
+    },
+    {
+      "id": "C008",
+      "category": "multi_human_poses",
+      "prompt": "A cowboy and a sheriff in western style",
+      "objects": ["cowboy", "sheriff"],
+      "style": ["western"],
+      "complexity": "medium"
+    },
+    {
+      "id": "C009",
+      "category": "multi_human_poses",
+      "prompt": "A pirate and a mermaid in nautical style",
+      "objects": ["pirate", "mermaid"],
+      "style": ["nautical"],
+      "complexity": "medium"
+    },
+    {
+      "id": "C010",
+      "category": "multi_human_poses",
+      "prompt": "A superhero and a villain fighting in comic book style",
+      "objects": ["superhero", "villain"],
+      "style": ["comic book"],
+      "complexity": "high"
+    },
+    {
+      "id": "D001",
+      "category": "mixed_animals_urban",
+      "prompt": "A lion walking next to a bus stop in neo-noir style",
+      "objects": ["lion", "bus stop"],
+      "style": ["neo-noir"],
+      "complexity": "high"
+    },
+    {
+      "id": "D002",
+      "category": "mixed_animals_urban",
+      "prompt": "A frog on a skyscraper in graffiti street art style",
+      "objects": ["frog", "skyscraper"],
+      "style": ["graffiti street art"],
+      "complexity": "high"
+    },
+    {
+      "id": "D003",
+      "category": "mixed_animals_urban",
+      "prompt": "A elephant in a subway station in urban style",
+      "objects": ["elephant", "subway station"],
+      "style": ["urban"],
+      "complexity": "high"
+    },
+    {
+      "id": "D004",
+      "category": "mixed_animals_urban",
+      "prompt": "A giraffe looking through a window in modern style",
+      "objects": ["giraffe", "window"],
+      "style": ["modern"],
+      "complexity": "medium"
+    },
+    {
+      "id": "D005",
+      "category": "mixed_animals_urban",
+      "prompt": "A penguin in a coffee shop in hipster style",
+      "objects": ["penguin", "coffee shop"],
+      "style": ["hipster"],
+      "complexity": "medium"
+    },
+    {
+      "id": "D006",
+      "category": "mixed_animals_urban",
+      "prompt": "A bear in a library in vintage style",
+      "objects": ["bear", "library"],
+      "style": ["vintage"],
+      "complexity": "medium"
+    },
+    {
+      "id": "D007",
+      "category": "mixed_animals_urban",
+      "prompt": "A wolf in a train station in industrial style",
+      "objects": ["wolf", "train station"],
+      "style": ["industrial"],
+      "complexity": "medium"
+    },
+    {
+      "id": "D008",
+      "category": "mixed_animals_urban",
+      "prompt": "A deer in a shopping mall in consumerist style",
+      "objects": ["deer", "shopping mall"],
+      "style": ["consumerist"],
+      "complexity": "medium"
+    },
+    {
+      "id": "D009",
+      "category": "mixed_animals_urban",
+      "prompt": "A fox in a park in naturalist style",
+      "objects": ["fox", "park"],
+      "style": ["naturalist"],
+      "complexity": "low"
+    },
+    {
+      "id": "D010",
+      "category": "mixed_animals_urban",
+      "prompt": "A rabbit in a garden in cottage style",
+      "objects": ["rabbit", "garden"],
+      "style": ["cottage"],
+      "complexity": "low"
+    },
+    {
+      "id": "E001",
+      "category": "abstract_concepts",
+      "prompt": "Time and memory portrayed in cubist art",
+      "objects": ["time", "memory"],
+      "style": ["cubist art"],
+      "complexity": "very_high"
+    },
+    {
+      "id": "E002",
+      "category": "abstract_concepts",
+      "prompt": "A quantum computer and a butterfly in 90s anime style",
+      "objects": ["quantum computer", "butterfly"],
+      "style": ["90s anime"],
+      "complexity": "high"
+    },
+    {
+      "id": "E003",
+      "category": "abstract_concepts",
+      "prompt": "Dreams and reality merging in surrealist style",
+      "objects": ["dreams", "reality"],
+      "style": ["surrealist"],
+      "complexity": "very_high"
+    },
+    {
+      "id": "E004",
+      "category": "abstract_concepts",
+      "prompt": "Love and hate represented in expressionist style",
+      "objects": ["love", "hate"],
+      "style": ["expressionist"],
+      "complexity": "very_high"
+    },
+    {
+      "id": "E005",
+      "category": "abstract_concepts",
+      "prompt": "A black hole and a star in cosmic style",
+      "objects": ["black hole", "star"],
+      "style": ["cosmic"],
+      "complexity": "high"
+    },
+    {
+      "id": "E006",
+      "category": "abstract_concepts",
+      "prompt": "Chaos and order in abstract style",
+      "objects": ["chaos", "order"],
+      "style": ["abstract"],
+      "complexity": "very_high"
+    },
+    {
+      "id": "E007",
+      "category": "abstract_concepts",
+      "prompt": "A virus and a cell in microscopic style",
+      "objects": ["virus", "cell"],
+      "style": ["microscopic"],
+      "complexity": "high"
+    },
+    {
+      "id": "E008",
+      "category": "abstract_concepts",
+      "prompt": "Light and shadow in chiaroscuro style",
+      "objects": ["light", "shadow"],
+      "style": ["chiaroscuro"],
+      "complexity": "high"
+    },
+    {
+      "id": "E009",
+      "category": "abstract_concepts",
+      "prompt": "A brain and a computer in neural style",
+      "objects": ["brain", "computer"],
+      "style": ["neural"],
+      "complexity": "high"
+    },
+    {
+      "id": "E010",
+      "category": "abstract_concepts",
+      "prompt": "Fire and ice in elemental style",
+      "objects": ["fire", "ice"],
+      "style": ["elemental"],
+      "complexity": "medium"
+    }
+  ]
+} 

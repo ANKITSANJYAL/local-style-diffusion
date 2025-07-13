@@ -1,0 +1,157 @@
+﻿Project Proposal: Local Prompt Adaptation for Style-Consistent Multi-Object Generation in Diffusion Models
+Title
+Local Prompt Adaptation for Style-Consistent Multi-Object Generation in Diffusion Models
+________________
+
+
+Problem Statement
+While state-of-the-art text-to-image diffusion models (e.g., Stable Diffusion XL) demonstrate impressive generation quality, they struggle with prompt compositionality involving:
+1. Multiple objects with distinct attributes or relationships.
+
+2. Consistent global or local styles (e.g., "vaporwave," "cyberpunk") across all entities.
+
+For example, generating "a cat on a flying car in vaporwave style" often produces scenes where only one element reflects the style, or the spatial layout is incoherent. This limits controllability and artistic coherence in creative applications.
+________________
+
+
+Proposed Method
+We propose a training-free architectural method called Local Prompt Adaptation (LPA) which improves style consistency and multi-object spatial control in text-to-image diffusion generation.
+1. Prompt Token Segmentation
+   * Parse input prompts into subphrases using off-the-shelf syntactic parsers (e.g., spaCy).
+
+   * Separate object tokens and style tokens:
+
+      * Example: Prompt: "A cat on a flying car in vaporwave style"
+
+         * Object tokens: ["cat", "flying car"]
+
+         * Style tokens: ["vaporwave"]
+
+2. Controlled Cross-Attention Injection
+            * Identify relevant U-Net cross-attention layers across timesteps $t \in {10, 20, 30, ..., 50}$.
+
+            * Inject object tokens into early U-Net layers (e.g., down blocks) to control coarse layout.
+
+            * Inject style tokens into middle and late blocks (mid & up blocks) to refine stylistic consistency.
+
+3. Spatial Attention Localization
+               * At inference, record cross-attention maps $A_{ij}^t$ from U-Net.
+
+               * Use these maps to derive which spatial regions attend to which tokens.
+
+               * Optionally visualize per-token activation maps (useful for user understanding).
+
+4. Style Consistency Loss (Optional, with Re-Ranking)
+                  * After generation, compute region-wise CLIP/DINO embeddings for different objects.
+
+                  * Calculate the style-consistency loss:
+
+Lstyle=∑i=1ND(fclip(Ri),fclip(S))\mathcal{L}_{style} = \sum_{i=1}^N D(f_{clip}(R_i), f_{clip}(S))
+Where $R_i$ is the patch embedding of object $i$, $S$ is the style token embedding, and $D$ is cosine distance.
+                     * Use this to re-rank N generated samples (e.g., N = 4) per prompt.
+
+________________
+
+
+Dataset & Prompts
+1. Dataset
+                        * Prompts Only: No training needed. We generate synthetic data.
+
+                        * Use Stable Diffusion XL (SDXL 1.0) as base model via diffusers.
+
+2. Prompt Set (50 Total Prompts)
+Create 5 categories:
+Category A: Simple Multi-Object with Style (10)
+                           * A tiger and a spaceship in cyberpunk style
+
+                           * A dog on a hoverboard in synthwave style
+
+Category B: Scene + Object + Style (10)
+                              * A waterfall in the background and a temple in ukiyo-e style
+
+                              * A city skyline and a flying dragon in fantasy art style
+
+Category C: Multi-Human Poses + Style (10)
+                                 * A samurai and a monk meditating in cel-shaded style
+
+                                 * A ballerina and a robot dancing in Pixar style
+
+Category D: Mixed Animals + Urban Style (10)
+                                    * A lion walking next to a bus stop in neo-noir style
+
+                                    * A frog on a skyscraper in graffiti street art style
+
+Category E: Abstract Concepts + Style (10)
+                                       * Time and memory portrayed in cubist art
+
+                                       * A quantum computer and a butterfly in 90s anime style
+
+________________
+
+
+Evaluation Metrics
+1. Style Consistency Score (CLIP/DINO)
+                                          * Extract per-object patch embeddings and style embedding
+
+                                          * Compute average cosine similarity (higher = better)
+
+2. LPIPS (Perceptual Distance)
+                                             * Use LPIPS to compare generated images to nearest stylistic exemplars (or among each other)
+
+3. CLIP-Text Alignment
+                                                * CLIPScore between prompt and generated image
+
+                                                * Ensures content isn’t sacrificed while enforcing style
+
+4. User Study (Optional, 10 participants)
+                                                   * Rate consistency, coherence, and fidelity on a 1–5 Likert scale
+
+________________
+
+
+Baselines
+                                                      * Baseline 1: Raw SDXL with full prompt
+
+                                                      * Baseline 2: SDXL with CFG tuning (high guidance = 12–18)
+
+                                                      * Our Method: Local Prompt Adaptation (token-split + controlled injection)
+
+________________
+
+
+Implementation Details
+                                                         * Framework: Hugging Face Diffusers
+
+                                                         * Base Model: stabilityai/stable-diffusion-xl-base-1.0
+
+                                                         * Key Modifications:
+
+                                                            * Overwrite CrossAttention layer to support token masking and timestep control
+
+                                                            * Add hooks to extract attention maps
+
+                                                            * Use spaCy for prompt parsing
+
+                                                               * Batch size: 1 (sampling only)
+
+                                                               * Outputs: 4 samples per prompt
+
+________________
+
+
+Project Deliverables
+                                                                  1. Paper in LaTeX (CVPR-style)
+
+                                                                  2. GitHub repo
+                                                                  3. Colab notebook demo (style injection interface)
+
+                                                                  4. Tweet visual thread showcasing before/after
+
+                                                                  5. Optional extension: Web UI via Gradio or Streamlit
+
+________________
+
+
+                                                                     * Conference targets: CVPR 2026, ICCV 2025, or NeurIPS 2026
+
+This project is designed to maximize visual impact, address a real controllability gap in diffusion, and build on your prior energy-guided diffusion expertise.

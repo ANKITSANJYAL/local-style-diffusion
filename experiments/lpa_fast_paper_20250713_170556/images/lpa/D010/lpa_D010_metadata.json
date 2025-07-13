@@ -1,0 +1,28 @@
+{
+  "prompt": "A rabbit in a garden in cottage style",
+  "negative_prompt": "",
+  "config": {
+    "num_inference_steps": 15,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 1,
+    "injection_timesteps": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "object_layers": [
+      "down_blocks.0",
+      "down_blocks.1"
+    ],
+    "style_layers": [
+      "mid_block",
+      "up_blocks.0"
+    ],
+    "injection_strength": 1.0,
+    "save_attention_maps": true
+  },
+  "seed": 42
+}

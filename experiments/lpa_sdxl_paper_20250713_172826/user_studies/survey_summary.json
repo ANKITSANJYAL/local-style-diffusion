@@ -1,0 +1,27 @@
+{
+  "generated_at": "2025-07-13T19:11:43.034635",
+  "surveys": [
+    "comparison",
+    "style_consistency",
+    "content_fidelity"
+  ],
+  "files": {
+    "comparison": {
+      "json": "comparison_survey.json",
+      "html": "comparison_survey.html"
+    },
+    "style_consistency": {
+      "json": "style_consistency_survey.json",
+      "html": "style_consistency_survey.html"
+    },
+    "content_fidelity": {
+      "json": "content_fidelity_survey.json",
+      "html": "content_fidelity_survey.html"
+    }
+  },
+  "instructions": {
+    "comparison": "A/B comparison between LPA and baseline methods",
+    "style_consistency": "Style consistency evaluation for LPA images",
+    "content_fidelity": "Content fidelity evaluation for multi-object prompts"
+  }
+}

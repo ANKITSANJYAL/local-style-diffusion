@@ -1,0 +1,17 @@
+{
+  "survey_id": "lpa_comparison_20250713_191143",
+  "title": "LPA vs Baseline Image Generation Comparison",
+  "description": "Please compare the quality of two generated images for each prompt. Rate which image better matches the prompt and style requirements.",
+  "instructions": [
+    "For each question, you will see a prompt and two generated images (A and B).",
+    "Rate which image better matches the prompt and style requirements.",
+    "Consider both content accuracy and style consistency.",
+    "You can also provide optional comments for each comparison."
+  ],
+  "questions": [],
+  "metadata": {
+    "generated_at": "2025-07-13T19:11:43.033294",
+    "num_questions": 20,
+    "experiment_dir": "experiments/lpa_sdxl_paper_20250713_172826"
+  }
+}

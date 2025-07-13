@@ -1,0 +1,120 @@
+baselines:
+- description: Raw SD v1.5 with full prompt
+  guidance_scale: 7.5
+  name: vanilla_sd
+- description: SD v1.5 with high guidance
+  guidance_scale: 15.0
+  name: high_cfg_sd
+- description: Our Local Prompt Adaptation method
+  enabled: true
+  name: lpa_method
+dataset:
+  categories:
+  - simple_multi_object
+  - scene_object_style
+  categories_file: data/prompts/prompt_categories.json
+  num_prompts: 10
+  prompts_file: data/prompts/test_prompts.json
+evaluation:
+  clip_score:
+    model_name: openai/clip-vit-base-patch32
+  metrics:
+  - style_consistency
+  - clip_score
+  reranking:
+    enabled: false
+  style_consistency:
+    method: clip
+    model_name: openai/clip-vit-base-patch32
+    patch_size: 16
+    similarity_metric: cosine
+experiment:
+  description: Local Prompt Adaptation for Style-Consistent Multi-Object Generation
+    (Fast Version)
+  name: lpa_style_consistency_fast
+  seed: 42
+  timestamp: true
+  version: 1.0.0
+generation:
+  batch_size: 1
+  guidance_scale: 7.5
+  height: 512
+  num_images_per_prompt: 1
+  num_inference_steps: 15
+  width: 512
+logging:
+  level: INFO
+  log_dir: logs
+  save_logs: true
+  use_wandb: false
+  wandb_project: lpa-style-diffusion
+lpa:
+  attention:
+    attention_map_resolution: 32
+    normalize_attention: true
+    save_attention_maps: true
+  injection:
+    injection_strength: 1.0
+    object_layers:
+    - down_blocks.0
+    - down_blocks.1
+    style_layers:
+    - mid_block
+    - up_blocks.0
+    timesteps:
+    - 5
+    - 10
+    - 15
+    - 20
+  parser:
+    confidence_threshold: 0.7
+    method: spacy
+    spacy_model: en_core_web_sm
+model:
+  base_model: runwayml/stable-diffusion-v1-5
+  device: cpu
+  dtype: float32
+  use_attention_slicing: true
+  use_memory_efficient_attention: true
+output:
+  base_dir: experiments
+  compression_quality: 95
+  image_format: png
+  naming:
+    include_method: true
+    include_prompt_hash: true
+    timestamp: true
+  results:
+    attention_maps_dir: data/results/attention_maps
+    images_dir: data/results/images
+    metrics_dir: data/results/metrics
+    tables_dir: data/results/tables
+  save_attention_maps: true
+  save_images: true
+  save_metrics: true
+  save_tables: true
+performance:
+  compile_model: false
+  gradient_checkpointing: false
+  memory_efficient_attention: true
+  use_mixed_precision: false
+reproducibility:
+  benchmark_cudnn: false
+  seed_workers: true
+  set_deterministic: true
+visualization:
+  attention_maps:
+    colormap: viridis
+    overlay_alpha: 0.7
+    save_combined: true
+    save_individual: true
+  comparison:
+    grid_size:
+    - 2
+    - 2
+    include_metrics: true
+    layout: grid
+  heatmaps:
+    colormap: RdYlBu_r
+    include_colorbar: true
+    normalize: true

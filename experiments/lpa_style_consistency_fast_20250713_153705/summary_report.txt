@@ -1,0 +1,15 @@
+LPA Experiment Summary Report
+==================================================
+
+Experiment Directory: experiments/lpa_style_consistency_fast_20250713_153705
+Timestamp: 2025-07-13T15:39:27.139979
+
+Total Prompts: 1
+LPA Success Rate: 100.00%
+Baseline Success Rate: 100.00%
+
+Category Distribution:
+  simple_multi_object: 1
+
+Complexity Distribution:
+  medium: 1

@@ -1,0 +1,14 @@
+{
+  "total_prompts": 1,
+  "successful_lpa": 1,
+  "successful_baselines": 1,
+  "lpa_success_rate": 1.0,
+  "baseline_success_rate": 1.0,
+  "category_distribution": {
+    "simple_multi_object": 1
+  },
+  "complexity_distribution": {
+    "medium": 1
+  },
+  "experiment_timestamp": "2025-07-13T16:39:08.081008"
+}

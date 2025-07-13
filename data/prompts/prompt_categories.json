@@ -1,0 +1,93 @@
+{
+  "categories": {
+    "simple_multi_object": {
+      "description": "Prompts with 2-3 distinct objects in a simple scene",
+      "examples": [
+        "A tiger and a spaceship in cyberpunk style",
+        "A cat and a book on a table",
+        "A flower and a butterfly in a garden"
+      ],
+      "complexity": "low",
+      "expected_style_consistency": "high"
+    },
+    "scene_object_style": {
+      "description": "Prompts with objects in specific scene contexts with style requirements",
+      "examples": [
+        "A car driving through a city in neon style",
+        "A tree in a forest in watercolor style",
+        "A building in a desert in minimalist style"
+      ],
+      "complexity": "medium",
+      "expected_style_consistency": "medium"
+    },
+    "multi_human_poses": {
+      "description": "Prompts involving multiple human figures in different poses",
+      "examples": [
+        "Two people dancing in classical style",
+        "A group of friends sitting in vintage style",
+        "A family walking in impressionist style"
+      ],
+      "complexity": "high",
+      "expected_style_consistency": "medium"
+    },
+    "mixed_animals_urban": {
+      "description": "Prompts combining animals with urban environments",
+      "examples": [
+        "A lion in Times Square in neon style",
+        "A bird on a skyscraper in cyberpunk style",
+        "A wolf in a subway in noir style"
+      ],
+      "complexity": "high",
+      "expected_style_consistency": "high"
+    },
+    "abstract_concepts": {
+      "description": "Prompts involving abstract concepts and emotions",
+      "examples": [
+        "Freedom and hope in surrealist style",
+        "Time and space in cubist style",
+        "Love and loss in expressionist style"
+      ],
+      "complexity": "very_high",
+      "expected_style_consistency": "low"
+    }
+  },
+  "complexity_levels": {
+    "low": {
+      "description": "Simple prompts with clear objects and styles",
+      "expected_success_rate": 0.9,
+      "evaluation_focus": "style_consistency"
+    },
+    "medium": {
+      "description": "Moderate complexity with scene context",
+      "expected_success_rate": 0.8,
+      "evaluation_focus": "style_consistency_and_clip_score"
+    },
+    "high": {
+      "description": "Complex prompts with multiple elements",
+      "expected_success_rate": 0.7,
+      "evaluation_focus": "overall_quality"
+    },
+    "very_high": {
+      "description": "Abstract or highly complex prompts",
+      "expected_success_rate": 0.6,
+      "evaluation_focus": "creativity_and_interpretation"
+    }
+  },
+  "evaluation_metrics": {
+    "style_consistency": {
+      "description": "How well the style is applied consistently across objects",
+      "expected_range": [0.0, 1.0],
+      "higher_is_better": true
+    },
+    "clip_score": {
+      "description": "Text-image alignment using CLIP embeddings",
+      "expected_range": [0.0, 1.0],
+      "higher_is_better": true
+    },
+    "lpips": {
+      "description": "Perceptual distance between generated images",
+      "expected_range": [0.0, 1.0],
+      "higher_is_better": false
+    }
+  }
+} 

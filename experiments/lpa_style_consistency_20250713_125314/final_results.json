@@ -1,0 +1,39 @@
+[
+  {
+    "prompt_id": "A001",
+    "prompt": "A tiger and a spaceship in cyberpunk style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T12:54:35.682827",
+    "parsed_prompt": {
+      "original_prompt": "A tiger and a spaceship in cyberpunk style",
+      "object_tokens": [
+        "a tiger",
+        "a spaceship",
+        "tiger",
+        "spaceship"
+      ],
+      "style_tokens": [
+        "cyberpunk",
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a tiger": 0.8,
+        "a spaceship": 0.8,
+        "tiger": 0.7,
+        "spaceship": 0.7,
+        "cyberpunk": 0.9,
+        "style": 0.9
+      },
+      "prompt_hash": "b3d77f2e",
+      "complexity": "high"
+    },
+    "lpa": {
+      "error": "MPS backend out of memory (MPS allocated: 26.94 GB, other allocations: 8.34 MB, max allowed: 27.20 GB). Tried to allocate 320.00 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure)."
+    },
+    "baselines": {
+      "error": "MPS backend out of memory (MPS allocated: 26.94 GB, other allocations: 8.34 MB, max allowed: 27.20 GB). Tried to allocate 320.00 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure)."
+    }
+  }
+]

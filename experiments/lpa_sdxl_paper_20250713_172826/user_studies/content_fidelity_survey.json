@@ -1,0 +1,17 @@
+{
+  "survey_id": "content_fidelity_20250713_191143",
+  "title": "Content Fidelity Evaluation",
+  "description": "Rate how well the generated images include all requested objects and elements.",
+  "instructions": [
+    "For each question, you will see a prompt with multiple objects/elements.",
+    "Rate how well the generated image includes all requested objects on a scale of 1-5.",
+    "Consider object presence, positioning, and overall scene composition.",
+    "1 = Missing most objects, 5 = All objects present and well-positioned"
+  ],
+  "questions": [],
+  "metadata": {
+    "generated_at": "2025-07-13T19:11:43.033343",
+    "num_questions": 15,
+    "experiment_dir": "experiments/lpa_sdxl_paper_20250713_172826"
+  }
+}

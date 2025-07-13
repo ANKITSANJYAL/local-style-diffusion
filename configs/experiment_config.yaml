@@ -1,0 +1,167 @@
+# Experiment Configuration for Local Prompt Adaptation (LPA)
+# This file contains all configurable parameters for experiments
+
+experiment:
+  name: "lpa_style_consistency"
+  version: "1.0.0"
+  description: "Local Prompt Adaptation for Style-Consistent Multi-Object Generation"
+  timestamp: true
+  seed: 42
+
+# Model Configuration
+model:
+  base_model: "stabilityai/stable-diffusion-xl-base-1.0"
+  device: "cpu"  # Use CPU to avoid MPS memory issues
+  dtype: "float32"  # Use float32 for CPU/MPS compatibility
+  use_attention_slicing: true
+  use_memory_efficient_attention: true
+
+# LPA Method Configuration
+lpa:
+  # Prompt Parsing
+  parser:
+    method: "spacy"  # or "rule_based"
+    spacy_model: "en_core_web_sm"
+    confidence_threshold: 0.7
+    
+  # Cross-Attention Injection
+  injection:
+    timesteps: [10, 20, 30, 40, 50]  # Injection timesteps
+    object_layers: ["down_blocks.0", "down_blocks.1", "down_blocks.2"]  # Early layers for objects
+    style_layers: ["mid_block", "up_blocks.0", "up_blocks.1", "up_blocks.2"]  # Later layers for style
+    injection_strength: 1.0  # Multiplier for injection strength
+    
+  # Attention Analysis
+  attention:
+    save_attention_maps: true
+    attention_map_resolution: 64  # Resolution for attention map visualization
+    normalize_attention: true
+
+# Generation Parameters
+generation:
+  num_inference_steps: 20  # Reduced from 50 for faster generation
+  guidance_scale: 7.5
+  num_images_per_prompt: 2  # Reduced from 4 to save memory
+  height: 512  # Reduced from 1024 to save memory
+  width: 512   # Reduced from 1024 to save memory
+  batch_size: 1
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "style_consistency"
+    - "lpips"
+    - "clip_score"
+    - "fid"  # Optional: Fréchet Inception Distance
+    
+  # Style Consistency
+  style_consistency:
+    method: "clip"  # or "dino"
+    model_name: "openai/clip-vit-base-patch32"
+    patch_size: 16
+    similarity_metric: "cosine"  # or "euclidean"
+    
+  # LPIPS
+  lpips:
+    model: "alex"  # or "vgg"
+    normalize: true
+    
+  # CLIP Score
+  clip_score:
+    model_name: "openai/clip-vit-base-patch32"
+    
+  # Re-ranking
+  reranking:
+    enabled: true
+    top_k: 1  # Select best image from generated samples
+
+# Baseline Configuration
+baselines:
+  - name: "sdxl_vanilla"
+    description: "Raw SDXL with full prompt"
+    guidance_scale: 7.5
+    
+  - name: "sdxl_high_cfg"
+    description: "SDXL with high guidance"
+    guidance_scale: 15.0
+    
+  - name: "lpa_method"
+    description: "Our Local Prompt Adaptation method"
+    enabled: true
+
+# Dataset Configuration
+dataset:
+  prompts_file: "data/prompts/test_prompts.json"
+  categories_file: "data/prompts/prompt_categories.json"
+  num_prompts: 50
+  categories:
+    - "simple_multi_object"
+    - "scene_object_style"
+    - "multi_human_poses"
+    - "mixed_animals_urban"
+    - "abstract_concepts"
+
+# Output Configuration
+output:
+  base_dir: "experiments"
+  save_images: true
+  save_attention_maps: true
+  save_metrics: true
+  save_tables: true
+  image_format: "png"
+  compression_quality: 95
+  
+  # File naming convention
+  naming:
+    timestamp: true
+    include_prompt_hash: true
+    include_method: true
+    
+  # Results organization
+  results:
+    images_dir: "data/results/images"
+    attention_maps_dir: "data/results/attention_maps"
+    metrics_dir: "data/results/metrics"
+    tables_dir: "data/results/tables"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  save_logs: true
+  log_dir: "logs"
+  use_wandb: false  # Set to true for experiment tracking
+  wandb_project: "lpa-style-diffusion"
+
+# Visualization Configuration
+visualization:
+  # Attention Maps
+  attention_maps:
+    colormap: "viridis"
+    overlay_alpha: 0.7
+    save_individual: true
+    save_combined: true
+    
+  # Results Comparison
+  comparison:
+    layout: "grid"  # or "side_by_side"
+    grid_size: [2, 2]
+    include_metrics: true
+    
+  # Style Consistency Heatmaps
+  heatmaps:
+    colormap: "RdYlBu_r"
+    normalize: true
+    include_colorbar: true
+
+# Performance Configuration
+performance:
+  use_mixed_precision: true
+  gradient_checkpointing: false
+  memory_efficient_attention: true
+  compile_model: false  # Requires PyTorch 2.0+
+  
+# Reproducibility
+reproducibility:
+  set_deterministic: true
+  benchmark_cudnn: false
+  seed_workers: true 

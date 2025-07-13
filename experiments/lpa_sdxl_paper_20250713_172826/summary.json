@@ -1,0 +1,21 @@
+{
+  "total_prompts": 50,
+  "successful_lpa": 50,
+  "successful_baselines": 50,
+  "lpa_success_rate": 1.0,
+  "baseline_success_rate": 1.0,
+  "category_distribution": {
+    "simple_multi_object": 10,
+    "scene_object_style": 10,
+    "multi_human_poses": 10,
+    "mixed_animals_urban": 10,
+    "abstract_concepts": 10
+  },
+  "complexity_distribution": {
+    "medium": 22,
+    "low": 5,
+    "high": 19,
+    "very_high": 4
+  },
+  "experiment_timestamp": "2025-07-13T18:08:30.378637"
+}

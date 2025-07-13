@@ -1,0 +1,159 @@
+# Debug Experiment Configuration for Local Prompt Adaptation (LPA)
+# Ultra-fast configuration for testing evaluation fixes
+
+experiment:
+  name: "lpa_debug_test"
+  version: "1.0.0"
+  description: "Debug test for evaluation fixes"
+  timestamp: true
+  seed: 42
+
+# Model Configuration
+model:
+  base_model: "runwayml/stable-diffusion-v1-5"  # Smaller model
+  device: "auto"  # Auto-detect best device
+  dtype: "float32"
+  use_attention_slicing: true
+  use_memory_efficient_attention: true
+
+# LPA Method Configuration
+lpa:
+  # Prompt Parsing
+  parser:
+    method: "spacy"
+    spacy_model: "en_core_web_sm"
+    confidence_threshold: 0.7
+    
+  # Cross-Attention Injection (minimal)
+  injection:
+    timesteps: [5, 10]  # Very few injection timesteps
+    object_layers: ["down_blocks.0"]  # Single layer
+    style_layers: ["mid_block"]  # Single layer
+    injection_strength: 1.0
+    
+  # Attention Analysis
+  attention:
+    save_attention_maps: false  # Disabled for speed
+    attention_map_resolution: 16
+    normalize_attention: true
+
+# Generation Parameters (ultra-fast)
+generation:
+  num_inference_steps: 5  # Very fast generation
+  guidance_scale: 7.5
+  num_images_per_prompt: 1  # Single image
+  height: 256  # Small images
+  width: 256
+  batch_size: 1
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "style_consistency"
+    - "clip_score"
+    
+  # Style Consistency
+  style_consistency:
+    method: "clip"
+    model_name: "openai/clip-vit-base-patch32"
+    patch_size: 16
+    similarity_metric: "cosine"
+    
+  # CLIP Score
+  clip_score:
+    model_name: "openai/clip-vit-base-patch32"
+    
+  # Re-ranking
+  reranking:
+    enabled: false
+
+# Baseline Configuration (minimal)
+baselines:
+  - name: "vanilla_sd"
+    description: "Raw SD v1.5 with full prompt"
+    guidance_scale: 7.5
+    
+  - name: "lpa_method"
+    description: "Our Local Prompt Adaptation method"
+    enabled: true
+
+# Dataset Configuration
+dataset:
+  prompts_file: "data/prompts/test_prompts.json"
+  categories_file: "data/prompts/prompt_categories.json"
+  num_prompts: 1  # Single prompt for testing
+  categories:
+    - "simple_multi_object"
+
+# Output Configuration
+output:
+  base_dir: "experiments"
+  save_images: true
+  save_attention_maps: false  # Disabled for speed
+  save_metrics: true
+  save_tables: true
+  image_format: "png"
+  compression_quality: 95
+  
+  # File naming convention
+  naming:
+    timestamp: true
+    include_prompt_hash: true
+    include_method: true
+    
+  # Results organization
+  results:
+    images_dir: "data/results/images"
+    attention_maps_dir: "data/results/attention_maps"
+    metrics_dir: "data/results/metrics"
+    tables_dir: "data/results/tables"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  save_logs: true
+  log_dir: "logs"
+  use_wandb: false
+  wandb_project: "lpa-debug"
+
+# Visualization Configuration
+visualization:
+  # Attention Maps
+  attention_maps:
+    colormap: "viridis"
+    overlay_alpha: 0.7
+    save_individual: false
+    save_combined: false
+    
+  # Results Comparison
+  comparison:
+    layout: "grid"
+    grid_size: [2, 2]
+    include_metrics: true
+    
+  # Style Consistency Heatmaps
+  heatmaps:
+    colormap: "RdYlBu_r"
+    normalize: true
+    include_colorbar: true
+
+# Performance Configuration
+performance:
+  use_mixed_precision: false
+  gradient_checkpointing: false
+  memory_efficient_attention: true
+  compile_model: false
+  
+# Reproducibility
+reproducibility:
+  set_deterministic: true
+  benchmark_cudnn: false
+  seed_workers: true
+
+# Paper-specific settings
+paper:
+  generate_comparison_tables: true
+  generate_comparison_plots: true
+  save_model_comparisons: true
+  include_timing_analysis: true
+  include_memory_analysis: true 

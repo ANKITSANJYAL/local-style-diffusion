@@ -1,0 +1,22 @@
+LPA Experiment Summary Report
+==================================================
+
+Experiment Directory: experiments/lpa_fast_paper_20250713_170556
+Timestamp: 2025-07-13T17:28:23.627107
+
+Total Prompts: 50
+LPA Success Rate: 100.00%
+Baseline Success Rate: 100.00%
+
+Category Distribution:
+  simple_multi_object: 10
+  scene_object_style: 10
+  multi_human_poses: 10
+  mixed_animals_urban: 10
+  abstract_concepts: 10
+
+Complexity Distribution:
+  medium: 22
+  low: 5
+  high: 19
+  very_high: 4

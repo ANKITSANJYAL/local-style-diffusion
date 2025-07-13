@@ -1,0 +1,204 @@
+# Paper Experiment Configuration for Local Prompt Adaptation (LPA)
+# This config is designed for paper experiments with both fast and SDXL models
+
+experiment:
+  name: "lpa_paper_experiments"
+  version: "1.0.0"
+  description: "Local Prompt Adaptation Paper Experiments - Fast vs SDXL Comparison"
+  timestamp: true
+  seed: 42
+  track_both_models: true  # Enable tracking of both fast and SDXL results
+
+# Model Configuration
+model:
+  # Primary model for paper (SDXL)
+  base_model: "stabilityai/stable-diffusion-xl-base-1.0"
+  device: "auto"  # Will auto-detect best available device (MPS on Mac, CUDA on Linux)
+  dtype: "float32"  # Use float32 for compatibility
+  use_attention_slicing: true
+  use_memory_efficient_attention: true
+  
+  # Fast model for comparison
+  fast_model: "runwayml/stable-diffusion-v1-5"
+  fast_device: "auto"
+  fast_dtype: "float32"
+
+# LPA Method Configuration
+lpa:
+  # Prompt Parsing
+  parser:
+    method: "spacy"  # or "rule_based"
+    spacy_model: "en_core_web_sm"
+    confidence_threshold: 0.7
+    
+  # Cross-Attention Injection
+  injection:
+    timesteps: [10, 20, 30, 40, 50]  # Full injection schedule for SDXL
+    object_layers: ["down_blocks.0", "down_blocks.1", "down_blocks.2"]  # Early layers for objects
+    style_layers: ["mid_block", "up_blocks.0", "up_blocks.1", "up_blocks.2"]  # Later layers for style
+    injection_strength: 1.0  # Multiplier for injection strength
+    
+  # Fast injection (reduced for SD v1.5)
+  fast_injection:
+    timesteps: [5, 10, 15, 20]  # Reduced injection timesteps
+    object_layers: ["down_blocks.0", "down_blocks.1"]  # Fewer layers
+    style_layers: ["mid_block", "up_blocks.0"]  # Fewer layers
+    injection_strength: 1.0
+    
+  # Attention Analysis
+  attention:
+    save_attention_maps: true
+    attention_map_resolution: 64  # Resolution for attention map visualization
+    normalize_attention: true
+
+# Generation Parameters
+generation:
+  # SDXL parameters
+  num_inference_steps: 50 # Reduced for faster testing
+  guidance_scale: 7.5
+  num_images_per_prompt: 2  # Reduced for faster testing
+  height: 512  # Reduced for faster testing
+  width: 512   # Reduced for faster testing
+  batch_size: 1
+  
+  # Fast parameters
+  fast_num_inference_steps: 15  # Reduced for faster testing
+  fast_guidance_scale: 7.5
+  fast_num_images_per_prompt: 1  # Reduced for faster testing
+  fast_height: 512
+  fast_width: 512
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "style_consistency"
+    - "lpips"
+    - "clip_score"
+    - "fid"  # Optional: Fréchet Inception Distance
+    
+  # Style Consistency
+  style_consistency:
+    method: "clip"  # or "dino"
+    model_name: "openai/clip-vit-base-patch32"
+    patch_size: 16
+    similarity_metric: "cosine"  # or "euclidean"
+    
+  # LPIPS
+  lpips:
+    model: "alex"  # or "vgg"
+    normalize: true
+    
+  # CLIP Score
+  clip_score:
+    model_name: "openai/clip-vit-base-patch32"
+    
+  # Re-ranking
+  reranking:
+    enabled: true
+    top_k: 1  # Select best image from generated samples
+
+# Baseline Configuration
+baselines:
+  - name: "sdxl_vanilla"
+    description: "Raw SDXL with full prompt"
+    guidance_scale: 7.5
+    
+  - name: "sdxl_high_cfg"
+    description: "SDXL with high guidance"
+    guidance_scale: 15.0
+    
+  - name: "sd_fast_vanilla"
+    description: "Raw SD v1.5 with full prompt"
+    guidance_scale: 7.5
+    
+  - name: "lpa_method"
+    description: "Our Local Prompt Adaptation method"
+    enabled: true
+
+# Dataset Configuration
+dataset:
+  prompts_file: "data/prompts/test_prompts.json"
+  categories_file: "data/prompts/prompt_categories.json"
+  num_prompts: 50  # Good balance for paper
+  categories:
+    - "simple_multi_object"
+    - "scene_object_style"
+    - "multi_human_poses"
+    - "mixed_animals_urban"
+    - "abstract_concepts"
+
+# Output Configuration
+output:
+  base_dir: "experiments"
+  save_images: true
+  save_attention_maps: true
+  save_metrics: true
+  save_tables: true
+  image_format: "png"
+  compression_quality: 95
+  
+  # File naming convention
+  naming:
+    timestamp: true
+    include_prompt_hash: true
+    include_method: true
+    include_model: true  # Include model type in filenames
+    
+  # Results organization
+  results:
+    images_dir: "data/results/images"
+    attention_maps_dir: "data/results/attention_maps"
+    metrics_dir: "data/results/metrics"
+    tables_dir: "data/results/tables"
+    comparison_dir: "data/results/comparisons"  # For model comparisons
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  save_logs: true
+  log_dir: "logs"
+  use_wandb: false  # Set to true for experiment tracking
+  wandb_project: "lpa-style-diffusion-paper"
+
+# Visualization Configuration
+visualization:
+  # Attention Maps
+  attention_maps:
+    colormap: "viridis"
+    overlay_alpha: 0.7
+    save_individual: true
+    save_combined: true
+    
+  # Results Comparison
+  comparison:
+    layout: "grid"  # or "side_by_side"
+    grid_size: [2, 2]
+    include_metrics: true
+    include_model_comparison: true  # Compare fast vs SDXL
+    
+  # Style Consistency Heatmaps
+  heatmaps:
+    colormap: "RdYlBu_r"
+    normalize: true
+    include_colorbar: true
+
+# Performance Configuration
+performance:
+  use_mixed_precision: false  # Disabled for CPU
+  gradient_checkpointing: false
+  memory_efficient_attention: true
+  compile_model: false  # Requires PyTorch 2.0+
+  
+# Reproducibility
+reproducibility:
+  set_deterministic: true
+  benchmark_cudnn: false
+  seed_workers: true
+
+# Paper-specific settings
+paper:
+  generate_comparison_tables: true
+  generate_comparison_plots: true
+  save_model_comparisons: true
+  include_timing_analysis: true
+  include_memory_analysis: true 

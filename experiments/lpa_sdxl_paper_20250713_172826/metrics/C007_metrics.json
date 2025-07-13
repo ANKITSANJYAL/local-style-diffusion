@@ -1,0 +1,14 @@
+{
+  "lpa": {
+    "style_consistency": 0.21895263344049454,
+    "clip_score": 0.2980610728263855
+  },
+  "baselines": {
+    "vanilla_sdxl": {
+      "clip_score": 0.2980610728263855
+    },
+    "high_cfg_sdxl": {
+      "clip_score": 0.2669006288051605
+    }
+  }
+}

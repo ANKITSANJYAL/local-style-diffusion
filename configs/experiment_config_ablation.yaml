@@ -1,0 +1,189 @@
+# Ablation Study Configuration for Local Prompt Adaptation (LPA)
+# Testing different injection schedules and orders
+
+experiment:
+  name: "lpa_ablation_studies"
+  version: "1.0.0"
+  description: "Ablation studies for injection order and schedule analysis"
+  timestamp: true
+  seed: 42
+
+# Model Configuration
+model:
+  base_model: "runwayml/stable-diffusion-v1-5"  # Use smaller model for faster ablation
+  device: "auto"
+  dtype: "float32"
+  use_attention_slicing: true
+  use_memory_efficient_attention: true
+
+# LPA Method Configuration - Multiple variants
+lpa_variants:
+  # Baseline: No injection
+  baseline:
+    injection_enabled: false
+    description: "No attention injection (vanilla SD)"
+    
+  # Variant 1: Objects first, then style (current method)
+  objects_first:
+    injection_enabled: true
+    injection_schedule: "sequential"
+    object_timesteps: [5, 10, 15]
+    style_timesteps: [20, 25, 30]
+    object_layers: ["down_blocks.0", "down_blocks.1"]
+    style_layers: ["mid_block", "up_blocks.0"]
+    description: "Objects first, then style injection"
+    
+  # Variant 2: Style first, then objects
+  style_first:
+    injection_enabled: true
+    injection_schedule: "sequential"
+    object_timesteps: [20, 25, 30]
+    style_timesteps: [5, 10, 15]
+    object_layers: ["down_blocks.0", "down_blocks.1"]
+    style_layers: ["mid_block", "up_blocks.0"]
+    description: "Style first, then objects injection"
+    
+  # Variant 3: Simultaneous injection
+  simultaneous:
+    injection_enabled: true
+    injection_schedule: "simultaneous"
+    timesteps: [5, 10, 15, 20, 25, 30]
+    object_layers: ["down_blocks.0", "down_blocks.1"]
+    style_layers: ["mid_block", "up_blocks.0"]
+    description: "Objects and style injected simultaneously"
+    
+  # Variant 4: Early injection (objects and style early)
+  early_injection:
+    injection_enabled: true
+    injection_schedule: "sequential"
+    object_timesteps: [2, 5, 8]
+    style_timesteps: [10, 15, 20]
+    object_layers: ["down_blocks.0", "down_blocks.1"]
+    style_layers: ["mid_block", "up_blocks.0"]
+    description: "Early object injection, mid style injection"
+    
+  # Variant 5: Late injection (objects and style late)
+  late_injection:
+    injection_enabled: true
+    injection_schedule: "sequential"
+    object_timesteps: [15, 20, 25]
+    style_timesteps: [25, 30, 35]
+    object_layers: ["down_blocks.0", "down_blocks.1"]
+    style_layers: ["mid_block", "up_blocks.0"]
+    description: "Late object and style injection"
+
+# Generation Parameters
+generation:
+  num_inference_steps: 50  # Match original experiment settings
+  guidance_scale: 7.5
+  num_images_per_prompt: 1  # Single image per variant for comparison
+  height: 512
+  width: 512
+  batch_size: 1
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "style_consistency"
+    - "clip_score"
+    - "lpips"
+    
+  # Style Consistency
+  style_consistency:
+    method: "clip"
+    model_name: "openai/clip-vit-base-patch32"
+    patch_size: 16
+    similarity_metric: "cosine"
+    
+  # CLIP Score
+  clip_score:
+    model_name: "openai/clip-vit-base-patch32"
+    
+  # LPIPS
+  lpips:
+    model: "alex"
+    normalize: true
+
+# Dataset Configuration
+dataset:
+  prompts_file: "data/prompts/test_prompts.json"
+  categories_file: "data/prompts/prompt_categories.json"
+  num_prompts: 50  # Match original experiment settings
+  categories:
+    - "simple_multi_object"
+    - "scene_object_style"
+
+# Output Configuration
+output:
+  base_dir: "experiments"
+  save_images: true
+  save_attention_maps: true
+  save_metrics: true
+  save_tables: true
+  image_format: "png"
+  compression_quality: 95
+  
+  # File naming convention
+  naming:
+    timestamp: true
+    include_prompt_hash: true
+    include_method: true
+    include_variant: true
+    
+  # Results organization
+  results:
+    images_dir: "data/results/images"
+    attention_maps_dir: "data/results/attention_maps"
+    metrics_dir: "data/results/metrics"
+    tables_dir: "data/results/tables"
+    ablation_dir: "data/results/ablation"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  save_logs: true
+  log_dir: "logs"
+  use_wandb: false
+  wandb_project: "lpa-ablation-studies"
+
+# Visualization Configuration
+visualization:
+  # Ablation comparison plots
+  ablation:
+    create_comparison_grid: true
+    include_metrics_in_grid: true
+    save_individual_variants: true
+    create_metric_plots: true
+    
+  # Results Comparison
+  comparison:
+    layout: "grid"
+    grid_size: [3, 2]  # 6 variants
+    include_metrics: true
+    
+  # Style Consistency Heatmaps
+  heatmaps:
+    colormap: "RdYlBu_r"
+    normalize: true
+    include_colorbar: true
+
+# Performance Configuration
+performance:
+  use_mixed_precision: false
+  gradient_checkpointing: false
+  memory_efficient_attention: true
+  compile_model: false
+  
+# Reproducibility
+reproducibility:
+  set_deterministic: true
+  benchmark_cudnn: false
+  seed_workers: true
+
+# Ablation-specific settings
+ablation:
+  generate_comparison_tables: true
+  generate_comparison_plots: true
+  statistical_analysis: true
+  include_confidence_intervals: true
+  create_ablation_report: true 

@@ -1,0 +1,1023 @@
+[
+  {
+    "prompt_id": "A001",
+    "prompt": "A tiger and a spaceship in cyberpunk style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T17:03:34.404570",
+    "parsed_prompt": {
+      "original_prompt": "A tiger and a spaceship in cyberpunk style",
+      "object_tokens": [
+        "a tiger",
+        "a spaceship",
+        "tiger",
+        "spaceship"
+      ],
+      "style_tokens": [
+        "cyberpunk",
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a tiger": 0.8,
+        "a spaceship": 0.8,
+        "tiger": 0.7,
+        "spaceship": 0.7,
+        "cyberpunk": 0.9,
+        "style": 0.9
+      },
+      "prompt_hash": "b3d77f2e",
+      "complexity": "high"
+    },
+    "lpa": {
+      "images": [
+        "PIL_Image"
+      ],
+      "best_image": "PIL_Image",
+      "attention_maps": {},
+      "parsed_prompt": {
+        "original_prompt": "A tiger and a spaceship in cyberpunk style",
+        "object_tokens": [
+          "a tiger",
+          "a spaceship",
+          "tiger",
+          "spaceship"
+        ],
+        "style_tokens": [
+          "cyberpunk",
+          "style",
+          "in style"
+        ],
+        "confidence_scores": {
+          "a tiger": 0.8,
+          "a spaceship": 0.8,
+          "tiger": 0.7,
+          "spaceship": 0.7,
+          "cyberpunk": 0.9,
+          "style": 0.9
+        },
+        "prompt_hash": "b3d77f2e",
+        "complexity": "high"
+      },
+      "injection_schedule": {
+        "5": {
+          "down_blocks.0": {
+            "a tiger": 0.25,
+            "a spaceship": 0.25,
+            "tiger": 0.25,
+            "spaceship": 0.25
+          },
+          "down_blocks.1": {
+            "a tiger": 0.25,
+            "a spaceship": 0.25,
+            "tiger": 0.25,
+            "spaceship": 0.25
+          },
+          "mid_block": {
+            "cyberpunk": 0.75,
+            "style": 0.75,
+            "in style": 0.75
+          },
+          "up_blocks.0": {
+            "cyberpunk": 0.75,
+            "style": 0.75,
+            "in style": 0.75
+          }
+        },
+        "10": {
+          "down_blocks.0": {
+            "a tiger": 0.5,
+            "a spaceship": 0.5,
+            "tiger": 0.5,
+            "spaceship": 0.5
+          },
+          "down_blocks.1": {
+            "a tiger": 0.5,
+            "a spaceship": 0.5,
+            "tiger": 0.5,
+            "spaceship": 0.5
+          },
+          "mid_block": {
+            "cyberpunk": 0.5,
+            "style": 0.5,
+            "in style": 0.5
+          },
+          "up_blocks.0": {
+            "cyberpunk": 0.5,
+            "style": 0.5,
+            "in style": 0.5
+          }
+        },
+        "15": {
+          "down_blocks.0": {
+            "a tiger": 0.75,
+            "a spaceship": 0.75,
+            "tiger": 0.75,
+            "spaceship": 0.75
+          },
+          "down_blocks.1": {
+            "a tiger": 0.75,
+            "a spaceship": 0.75,
+            "tiger": 0.75,
+            "spaceship": 0.75
+          },
+          "mid_block": {
+            "cyberpunk": 0.25,
+            "style": 0.25,
+            "in style": 0.25
+          },
+          "up_blocks.0": {
+            "cyberpunk": 0.25,
+            "style": 0.25,
+            "in style": 0.25
+          }
+        },
+        "20": {
+          "down_blocks.0": {
+            "a tiger": 1.0,
+            "a spaceship": 1.0,
+            "tiger": 1.0,
+            "spaceship": 1.0
+          },
+          "down_blocks.1": {
+            "a tiger": 1.0,
+            "a spaceship": 1.0,
+            "tiger": 1.0,
+            "spaceship": 1.0
+          },
+          "mid_block": {
+            "cyberpunk": 0.0,
+            "style": 0.0,
+            "in style": 0.0
+          },
+          "up_blocks.0": {
+            "cyberpunk": 0.0,
+            "style": 0.0,
+            "in style": 0.0
+          }
+        }
+      },
+      "metadata": {
+        "prompt": "A tiger and a spaceship in cyberpunk style",
+        "negative_prompt": "",
+        "config": "LPAGenerationConfig(num_inference_steps=15, guidance_scale=7.5, height=512, width=512, num_images_per_prompt=1, injection_timesteps=[5, 10, 15, 20], object_layers=['down_blocks.0', 'down_blocks.1'], style_layers=['mid_block', 'up_blocks.0'], injection_strength=1.0, save_attention_maps=True)",
+        "seed": 42
+      }
+    },
+    "baselines": {
+      "vanilla_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A tiger and a spaceship in cyberpunk style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "vanilla_sdxl"
+        }
+      },
+      "high_cfg_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A tiger and a spaceship in cyberpunk style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "high_cfg_sdxl",
+          "high_guidance_scale": 15.0
+        }
+      }
+    },
+    "evaluation_metrics": {
+      "lpa": {
+        "style_consistency": 0.23327413201332092,
+        "clip_score": 0.32759368419647217
+      },
+      "baselines": {
+        "vanilla_sdxl": {
+          "clip_score": 0.32759368419647217
+        },
+        "high_cfg_sdxl": {
+          "clip_score": 0.3210983872413635
+        }
+      }
+    }
+  },
+  {
+    "prompt_id": "A002",
+    "prompt": "A dog on a hoverboard in synthwave style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T17:03:58.123821",
+    "parsed_prompt": {
+      "original_prompt": "A dog on a hoverboard in synthwave style",
+      "object_tokens": [
+        "a dog",
+        "a hoverboard",
+        "dog",
+        "hoverboard"
+      ],
+      "style_tokens": [
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a dog": 0.8,
+        "a hoverboard": 0.8,
+        "dog": 0.7,
+        "hoverboard": 0.7,
+        "style": 0.9
+      },
+      "prompt_hash": "fe89677a",
+      "complexity": "high"
+    },
+    "lpa": {
+      "images": [
+        "PIL_Image"
+      ],
+      "best_image": "PIL_Image",
+      "attention_maps": {},
+      "parsed_prompt": {
+        "original_prompt": "A dog on a hoverboard in synthwave style",
+        "object_tokens": [
+          "a dog",
+          "a hoverboard",
+          "dog",
+          "hoverboard"
+        ],
+        "style_tokens": [
+          "style",
+          "in style"
+        ],
+        "confidence_scores": {
+          "a dog": 0.8,
+          "a hoverboard": 0.8,
+          "dog": 0.7,
+          "hoverboard": 0.7,
+          "style": 0.9
+        },
+        "prompt_hash": "fe89677a",
+        "complexity": "high"
+      },
+      "injection_schedule": {
+        "5": {
+          "down_blocks.0": {
+            "a dog": 0.25,
+            "a hoverboard": 0.25,
+            "dog": 0.25,
+            "hoverboard": 0.25
+          },
+          "down_blocks.1": {
+            "a dog": 0.25,
+            "a hoverboard": 0.25,
+            "dog": 0.25,
+            "hoverboard": 0.25
+          },
+          "mid_block": {
+            "style": 0.75,
+            "in style": 0.75
+          },
+          "up_blocks.0": {
+            "style": 0.75,
+            "in style": 0.75
+          }
+        },
+        "10": {
+          "down_blocks.0": {
+            "a dog": 0.5,
+            "a hoverboard": 0.5,
+            "dog": 0.5,
+            "hoverboard": 0.5
+          },
+          "down_blocks.1": {
+            "a dog": 0.5,
+            "a hoverboard": 0.5,
+            "dog": 0.5,
+            "hoverboard": 0.5
+          },
+          "mid_block": {
+            "style": 0.5,
+            "in style": 0.5
+          },
+          "up_blocks.0": {
+            "style": 0.5,
+            "in style": 0.5
+          }
+        },
+        "15": {
+          "down_blocks.0": {
+            "a dog": 0.75,
+            "a hoverboard": 0.75,
+            "dog": 0.75,
+            "hoverboard": 0.75
+          },
+          "down_blocks.1": {
+            "a dog": 0.75,
+            "a hoverboard": 0.75,
+            "dog": 0.75,
+            "hoverboard": 0.75
+          },
+          "mid_block": {
+            "style": 0.25,
+            "in style": 0.25
+          },
+          "up_blocks.0": {
+            "style": 0.25,
+            "in style": 0.25
+          }
+        },
+        "20": {
+          "down_blocks.0": {
+            "a dog": 1.0,
+            "a hoverboard": 1.0,
+            "dog": 1.0,
+            "hoverboard": 1.0
+          },
+          "down_blocks.1": {
+            "a dog": 1.0,
+            "a hoverboard": 1.0,
+            "dog": 1.0,
+            "hoverboard": 1.0
+          },
+          "mid_block": {
+            "style": 0.0,
+            "in style": 0.0
+          },
+          "up_blocks.0": {
+            "style": 0.0,
+            "in style": 0.0
+          }
+        }
+      },
+      "metadata": {
+        "prompt": "A dog on a hoverboard in synthwave style",
+        "negative_prompt": "",
+        "config": "LPAGenerationConfig(num_inference_steps=15, guidance_scale=7.5, height=512, width=512, num_images_per_prompt=1, injection_timesteps=[5, 10, 15, 20], object_layers=['down_blocks.0', 'down_blocks.1'], style_layers=['mid_block', 'up_blocks.0'], injection_strength=1.0, save_attention_maps=True)",
+        "seed": 42
+      }
+    },
+    "baselines": {
+      "vanilla_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A dog on a hoverboard in synthwave style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "vanilla_sdxl"
+        }
+      },
+      "high_cfg_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A dog on a hoverboard in synthwave style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "high_cfg_sdxl",
+          "high_guidance_scale": 15.0
+        }
+      }
+    },
+    "evaluation_metrics": {
+      "lpa": {
+        "style_consistency": 0.2421901747584343,
+        "clip_score": 0.3463188111782074
+      },
+      "baselines": {
+        "vanilla_sdxl": {
+          "clip_score": 0.3463188111782074
+        },
+        "high_cfg_sdxl": {
+          "clip_score": 0.3380194902420044
+        }
+      }
+    }
+  },
+  {
+    "prompt_id": "A003",
+    "prompt": "A cat and a robot in steampunk style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T17:04:20.051565",
+    "parsed_prompt": {
+      "original_prompt": "A cat and a robot in steampunk style",
+      "object_tokens": [
+        "a cat",
+        "a robot",
+        "cat",
+        "robot"
+      ],
+      "style_tokens": [
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a cat": 0.8,
+        "a robot": 0.8,
+        "cat": 0.7,
+        "robot": 0.7,
+        "style": 0.9
+      },
+      "prompt_hash": "45cd8a30",
+      "complexity": "high"
+    },
+    "lpa": {
+      "images": [
+        "PIL_Image"
+      ],
+      "best_image": "PIL_Image",
+      "attention_maps": {},
+      "parsed_prompt": {
+        "original_prompt": "A cat and a robot in steampunk style",
+        "object_tokens": [
+          "a cat",
+          "a robot",
+          "cat",
+          "robot"
+        ],
+        "style_tokens": [
+          "style",
+          "in style"
+        ],
+        "confidence_scores": {
+          "a cat": 0.8,
+          "a robot": 0.8,
+          "cat": 0.7,
+          "robot": 0.7,
+          "style": 0.9
+        },
+        "prompt_hash": "45cd8a30",
+        "complexity": "high"
+      },
+      "injection_schedule": {
+        "5": {
+          "down_blocks.0": {
+            "a cat": 0.25,
+            "a robot": 0.25,
+            "cat": 0.25,
+            "robot": 0.25
+          },
+          "down_blocks.1": {
+            "a cat": 0.25,
+            "a robot": 0.25,
+            "cat": 0.25,
+            "robot": 0.25
+          },
+          "mid_block": {
+            "style": 0.75,
+            "in style": 0.75
+          },
+          "up_blocks.0": {
+            "style": 0.75,
+            "in style": 0.75
+          }
+        },
+        "10": {
+          "down_blocks.0": {
+            "a cat": 0.5,
+            "a robot": 0.5,
+            "cat": 0.5,
+            "robot": 0.5
+          },
+          "down_blocks.1": {
+            "a cat": 0.5,
+            "a robot": 0.5,
+            "cat": 0.5,
+            "robot": 0.5
+          },
+          "mid_block": {
+            "style": 0.5,
+            "in style": 0.5
+          },
+          "up_blocks.0": {
+            "style": 0.5,
+            "in style": 0.5
+          }
+        },
+        "15": {
+          "down_blocks.0": {
+            "a cat": 0.75,
+            "a robot": 0.75,
+            "cat": 0.75,
+            "robot": 0.75
+          },
+          "down_blocks.1": {
+            "a cat": 0.75,
+            "a robot": 0.75,
+            "cat": 0.75,
+            "robot": 0.75
+          },
+          "mid_block": {
+            "style": 0.25,
+            "in style": 0.25
+          },
+          "up_blocks.0": {
+            "style": 0.25,
+            "in style": 0.25
+          }
+        },
+        "20": {
+          "down_blocks.0": {
+            "a cat": 1.0,
+            "a robot": 1.0,
+            "cat": 1.0,
+            "robot": 1.0
+          },
+          "down_blocks.1": {
+            "a cat": 1.0,
+            "a robot": 1.0,
+            "cat": 1.0,
+            "robot": 1.0
+          },
+          "mid_block": {
+            "style": 0.0,
+            "in style": 0.0
+          },
+          "up_blocks.0": {
+            "style": 0.0,
+            "in style": 0.0
+          }
+        }
+      },
+      "metadata": {
+        "prompt": "A cat and a robot in steampunk style",
+        "negative_prompt": "",
+        "config": "LPAGenerationConfig(num_inference_steps=15, guidance_scale=7.5, height=512, width=512, num_images_per_prompt=1, injection_timesteps=[5, 10, 15, 20], object_layers=['down_blocks.0', 'down_blocks.1'], style_layers=['mid_block', 'up_blocks.0'], injection_strength=1.0, save_attention_maps=True)",
+        "seed": 42
+      }
+    },
+    "baselines": {
+      "vanilla_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A cat and a robot in steampunk style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "vanilla_sdxl"
+        }
+      },
+      "high_cfg_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A cat and a robot in steampunk style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "high_cfg_sdxl",
+          "high_guidance_scale": 15.0
+        }
+      }
+    },
+    "evaluation_metrics": {
+      "lpa": {
+        "style_consistency": 0.24670083820819855,
+        "clip_score": 0.3531908392906189
+      },
+      "baselines": {
+        "vanilla_sdxl": {
+          "clip_score": 0.3531908392906189
+        },
+        "high_cfg_sdxl": {
+          "clip_score": 0.32553237676620483
+        }
+      }
+    }
+  },
+  {
+    "prompt_id": "A004",
+    "prompt": "A bird and a car in art deco style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T17:04:42.436686",
+    "parsed_prompt": {
+      "original_prompt": "A bird and a car in art deco style",
+      "object_tokens": [
+        "a bird",
+        "a car",
+        "bird",
+        "car",
+        "deco"
+      ],
+      "style_tokens": [
+        "art",
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a bird": 0.8,
+        "a car": 0.8,
+        "bird": 0.7,
+        "car": 0.7,
+        "deco": 0.7,
+        "art": 0.9,
+        "style": 0.9
+      },
+      "prompt_hash": "3eaecdea",
+      "complexity": "high"
+    },
+    "lpa": {
+      "images": [
+        "PIL_Image"
+      ],
+      "best_image": "PIL_Image",
+      "attention_maps": {},
+      "parsed_prompt": {
+        "original_prompt": "A bird and a car in art deco style",
+        "object_tokens": [
+          "a bird",
+          "a car",
+          "bird",
+          "car",
+          "deco"
+        ],
+        "style_tokens": [
+          "art",
+          "style",
+          "in style"
+        ],
+        "confidence_scores": {
+          "a bird": 0.8,
+          "a car": 0.8,
+          "bird": 0.7,
+          "car": 0.7,
+          "deco": 0.7,
+          "art": 0.9,
+          "style": 0.9
+        },
+        "prompt_hash": "3eaecdea",
+        "complexity": "high"
+      },
+      "injection_schedule": {
+        "5": {
+          "down_blocks.0": {
+            "a bird": 0.25,
+            "a car": 0.25,
+            "bird": 0.25,
+            "car": 0.25,
+            "deco": 0.25
+          },
+          "down_blocks.1": {
+            "a bird": 0.25,
+            "a car": 0.25,
+            "bird": 0.25,
+            "car": 0.25,
+            "deco": 0.25
+          },
+          "mid_block": {
+            "art": 0.75,
+            "style": 0.75,
+            "in style": 0.75
+          },
+          "up_blocks.0": {
+            "art": 0.75,
+            "style": 0.75,
+            "in style": 0.75
+          }
+        },
+        "10": {
+          "down_blocks.0": {
+            "a bird": 0.5,
+            "a car": 0.5,
+            "bird": 0.5,
+            "car": 0.5,
+            "deco": 0.5
+          },
+          "down_blocks.1": {
+            "a bird": 0.5,
+            "a car": 0.5,
+            "bird": 0.5,
+            "car": 0.5,
+            "deco": 0.5
+          },
+          "mid_block": {
+            "art": 0.5,
+            "style": 0.5,
+            "in style": 0.5
+          },
+          "up_blocks.0": {
+            "art": 0.5,
+            "style": 0.5,
+            "in style": 0.5
+          }
+        },
+        "15": {
+          "down_blocks.0": {
+            "a bird": 0.75,
+            "a car": 0.75,
+            "bird": 0.75,
+            "car": 0.75,
+            "deco": 0.75
+          },
+          "down_blocks.1": {
+            "a bird": 0.75,
+            "a car": 0.75,
+            "bird": 0.75,
+            "car": 0.75,
+            "deco": 0.75
+          },
+          "mid_block": {
+            "art": 0.25,
+            "style": 0.25,
+            "in style": 0.25
+          },
+          "up_blocks.0": {
+            "art": 0.25,
+            "style": 0.25,
+            "in style": 0.25
+          }
+        },
+        "20": {
+          "down_blocks.0": {
+            "a bird": 1.0,
+            "a car": 1.0,
+            "bird": 1.0,
+            "car": 1.0,
+            "deco": 1.0
+          },
+          "down_blocks.1": {
+            "a bird": 1.0,
+            "a car": 1.0,
+            "bird": 1.0,
+            "car": 1.0,
+            "deco": 1.0
+          },
+          "mid_block": {
+            "art": 0.0,
+            "style": 0.0,
+            "in style": 0.0
+          },
+          "up_blocks.0": {
+            "art": 0.0,
+            "style": 0.0,
+            "in style": 0.0
+          }
+        }
+      },
+      "metadata": {
+        "prompt": "A bird and a car in art deco style",
+        "negative_prompt": "",
+        "config": "LPAGenerationConfig(num_inference_steps=15, guidance_scale=7.5, height=512, width=512, num_images_per_prompt=1, injection_timesteps=[5, 10, 15, 20], object_layers=['down_blocks.0', 'down_blocks.1'], style_layers=['mid_block', 'up_blocks.0'], injection_strength=1.0, save_attention_maps=True)",
+        "seed": 42
+      }
+    },
+    "baselines": {
+      "vanilla_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A bird and a car in art deco style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "vanilla_sdxl"
+        }
+      },
+      "high_cfg_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A bird and a car in art deco style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "high_cfg_sdxl",
+          "high_guidance_scale": 15.0
+        }
+      }
+    },
+    "evaluation_metrics": {
+      "lpa": {
+        "style_consistency": 0.22262435654799143,
+        "clip_score": 0.3309384882450104
+      },
+      "baselines": {
+        "vanilla_sdxl": {
+          "clip_score": 0.3309384882450104
+        },
+        "high_cfg_sdxl": {
+          "clip_score": 0.30356743931770325
+        }
+      }
+    }
+  },
+  {
+    "prompt_id": "A005",
+    "prompt": "A fish and a submarine in underwater style",
+    "category": "simple_multi_object",
+    "complexity": "medium",
+    "timestamp": "2025-07-13T17:05:04.655159",
+    "parsed_prompt": {
+      "original_prompt": "A fish and a submarine in underwater style",
+      "object_tokens": [
+        "a fish",
+        "a submarine",
+        "fish",
+        "submarine"
+      ],
+      "style_tokens": [
+        "style",
+        "in style"
+      ],
+      "confidence_scores": {
+        "a fish": 0.8,
+        "a submarine": 0.8,
+        "fish": 0.7,
+        "submarine": 0.7,
+        "style": 0.9
+      },
+      "prompt_hash": "693b83f6",
+      "complexity": "high"
+    },
+    "lpa": {
+      "images": [
+        "PIL_Image"
+      ],
+      "best_image": "PIL_Image",
+      "attention_maps": {},
+      "parsed_prompt": {
+        "original_prompt": "A fish and a submarine in underwater style",
+        "object_tokens": [
+          "a fish",
+          "a submarine",
+          "fish",
+          "submarine"
+        ],
+        "style_tokens": [
+          "style",
+          "in style"
+        ],
+        "confidence_scores": {
+          "a fish": 0.8,
+          "a submarine": 0.8,
+          "fish": 0.7,
+          "submarine": 0.7,
+          "style": 0.9
+        },
+        "prompt_hash": "693b83f6",
+        "complexity": "high"
+      },
+      "injection_schedule": {
+        "5": {
+          "down_blocks.0": {
+            "a fish": 0.25,
+            "a submarine": 0.25,
+            "fish": 0.25,
+            "submarine": 0.25
+          },
+          "down_blocks.1": {
+            "a fish": 0.25,
+            "a submarine": 0.25,
+            "fish": 0.25,
+            "submarine": 0.25
+          },
+          "mid_block": {
+            "style": 0.75,
+            "in style": 0.75
+          },
+          "up_blocks.0": {
+            "style": 0.75,
+            "in style": 0.75
+          }
+        },
+        "10": {
+          "down_blocks.0": {
+            "a fish": 0.5,
+            "a submarine": 0.5,
+            "fish": 0.5,
+            "submarine": 0.5
+          },
+          "down_blocks.1": {
+            "a fish": 0.5,
+            "a submarine": 0.5,
+            "fish": 0.5,
+            "submarine": 0.5
+          },
+          "mid_block": {
+            "style": 0.5,
+            "in style": 0.5
+          },
+          "up_blocks.0": {
+            "style": 0.5,
+            "in style": 0.5
+          }
+        },
+        "15": {
+          "down_blocks.0": {
+            "a fish": 0.75,
+            "a submarine": 0.75,
+            "fish": 0.75,
+            "submarine": 0.75
+          },
+          "down_blocks.1": {
+            "a fish": 0.75,
+            "a submarine": 0.75,
+            "fish": 0.75,
+            "submarine": 0.75
+          },
+          "mid_block": {
+            "style": 0.25,
+            "in style": 0.25
+          },
+          "up_blocks.0": {
+            "style": 0.25,
+            "in style": 0.25
+          }
+        },
+        "20": {
+          "down_blocks.0": {
+            "a fish": 1.0,
+            "a submarine": 1.0,
+            "fish": 1.0,
+            "submarine": 1.0
+          },
+          "down_blocks.1": {
+            "a fish": 1.0,
+            "a submarine": 1.0,
+            "fish": 1.0,
+            "submarine": 1.0
+          },
+          "mid_block": {
+            "style": 0.0,
+            "in style": 0.0
+          },
+          "up_blocks.0": {
+            "style": 0.0,
+            "in style": 0.0
+          }
+        }
+      },
+      "metadata": {
+        "prompt": "A fish and a submarine in underwater style",
+        "negative_prompt": "",
+        "config": "LPAGenerationConfig(num_inference_steps=15, guidance_scale=7.5, height=512, width=512, num_images_per_prompt=1, injection_timesteps=[5, 10, 15, 20], object_layers=['down_blocks.0', 'down_blocks.1'], style_layers=['mid_block', 'up_blocks.0'], injection_strength=1.0, save_attention_maps=True)",
+        "seed": 42
+      }
+    },
+    "baselines": {
+      "vanilla_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A fish and a submarine in underwater style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "vanilla_sdxl"
+        }
+      },
+      "high_cfg_sdxl": {
+        "images": [
+          "PIL_Image"
+        ],
+        "best_image": "PIL_Image",
+        "metadata": {
+          "prompt": "A fish and a submarine in underwater style",
+          "negative_prompt": "",
+          "config": "BaselineConfig(num_inference_steps=15, guidance_scale=15.0, height=512, width=512, num_images_per_prompt=1)",
+          "seed": 42,
+          "method": "high_cfg_sdxl",
+          "high_guidance_scale": 15.0
+        }
+      }
+    },
+    "evaluation_metrics": {
+      "lpa": {
+        "style_consistency": 0.20600496232509613,
+        "clip_score": 0.2865791916847229
+      },
+      "baselines": {
+        "vanilla_sdxl": {
+          "clip_score": 0.2865791916847229
+        },
+        "high_cfg_sdxl": {
+          "clip_score": 0.27830344438552856
+        }
+      }
+    }
+  }
+]
