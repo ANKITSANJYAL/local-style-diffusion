@@ -1,9 +1,0 @@
-Method,CLIP Score,Style Consistency,Dataset,Model,Notes
-LPA (Ours),0.30926831424236295,0.21703386930127938,Multi-object style prompts (50),SD v1.5,Local Prompt Adaptation
-"Textual Inversion (Gal et al., 2022)",0.315,N/A,Custom style dataset,SD v1.4,Single concept learning
-"DreamBooth (Ruiz et al., 2022)",0.308,N/A,Custom subject dataset,SD v1.5,Subject-driven generation
-"LoRA (Hu et al., 2021)",0.312,N/A,General prompts,SD v1.5,Low-rank adaptation
-"ControlNet (Zhang et al., 2023)",0.32,N/A,Conditional generation,SD v1.5,Conditional control
-"Composer (Huang et al., 2023)",0.318,0.185,Multi-object prompts,SD v1.5,Multi-object composition
-"MultiDiffusion (Bar-Tal et al., 2023)",0.316,0.175,Multi-object prompts,SD v1.5,Multi-region generation
-"Attend-and-Excite (Chefer et al., 2023)",0.314,0.19,Multi-object prompts,SD v1.5,Attention-based control

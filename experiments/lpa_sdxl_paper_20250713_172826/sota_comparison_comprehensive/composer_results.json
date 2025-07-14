@@ -1,0 +1,302 @@
+[
+  {
+    "id": "A001",
+    "prompt": "A tiger and a spaceship in cyberpunk style",
+    "clip_score": 0.3806886076927185,
+    "img_path": "results/composer/A001.png"
+  },
+  {
+    "id": "A002",
+    "prompt": "A dog on a hoverboard in synthwave style",
+    "clip_score": 0.3925558626651764,
+    "img_path": "results/composer/A002.png"
+  },
+  {
+    "id": "A003",
+    "prompt": "A cat and a robot in steampunk style",
+    "clip_score": 0.37646484375,
+    "img_path": "results/composer/A003.png"
+  },
+  {
+    "id": "A004",
+    "prompt": "A bird and a car in art deco style",
+    "clip_score": 0.35595080256462097,
+    "img_path": "results/composer/A004.png"
+  },
+  {
+    "id": "A005",
+    "prompt": "A fish and a submarine in underwater style",
+    "clip_score": 0.31919077038764954,
+    "img_path": "results/composer/A005.png"
+  },
+  {
+    "id": "A006",
+    "prompt": "A butterfly and a flower in watercolor style",
+    "clip_score": 0.3289129137992859,
+    "img_path": "results/composer/A006.png"
+  },
+  {
+    "id": "A007",
+    "prompt": "A dragon and a castle in fantasy style",
+    "clip_score": 0.3252698481082916,
+    "img_path": "results/composer/A007.png"
+  },
+  {
+    "id": "A008",
+    "prompt": "A penguin and an iceberg in polar style",
+    "clip_score": 0.32722270488739014,
+    "img_path": "results/composer/A008.png"
+  },
+  {
+    "id": "A009",
+    "prompt": "A bee and a hive in honeycomb style",
+    "clip_score": 0.31040245294570923,
+    "img_path": "results/composer/A009.png"
+  },
+  {
+    "id": "A010",
+    "prompt": "A shark and a shipwreck in oceanic style",
+    "clip_score": 0.29794254899024963,
+    "img_path": "results/composer/A010.png"
+  },
+  {
+    "id": "B001",
+    "prompt": "A waterfall in the background and a temple in ukiyo-e style",
+    "clip_score": 0.3370792269706726,
+    "img_path": "results/composer/B001.png"
+  },
+  {
+    "id": "B002",
+    "prompt": "A city skyline and a flying dragon in fantasy art style",
+    "clip_score": 0.3435159921646118,
+    "img_path": "results/composer/B002.png"
+  },
+  {
+    "id": "B003",
+    "prompt": "A mountain range and a hot air balloon in impressionist style",
+    "clip_score": 0.38390350341796875,
+    "img_path": "results/composer/B003.png"
+  },
+  {
+    "id": "B004",
+    "prompt": "A forest and a unicorn in magical realism style",
+    "clip_score": 0.345450222492218,
+    "img_path": "results/composer/B004.png"
+  },
+  {
+    "id": "B005",
+    "prompt": "A desert and a pyramid in ancient Egyptian style",
+    "clip_score": 0.3210907280445099,
+    "img_path": "results/composer/B005.png"
+  },
+  {
+    "id": "B006",
+    "prompt": "A beach and a mermaid in tropical style",
+    "clip_score": 0.2977314889431,
+    "img_path": "results/composer/B006.png"
+  },
+  {
+    "id": "B007",
+    "prompt": "A volcano and a phoenix in fire style",
+    "clip_score": 0.3318059742450714,
+    "img_path": "results/composer/B007.png"
+  },
+  {
+    "id": "B008",
+    "prompt": "A glacier and a polar bear in arctic style",
+    "clip_score": 0.3037121593952179,
+    "img_path": "results/composer/B008.png"
+  },
+  {
+    "id": "B009",
+    "prompt": "A canyon and a eagle in southwestern style",
+    "clip_score": 0.36320751905441284,
+    "img_path": "results/composer/B009.png"
+  },
+  {
+    "id": "B010",
+    "prompt": "A coral reef and a sea turtle in marine style",
+    "clip_score": 0.3111051917076111,
+    "img_path": "results/composer/B010.png"
+  },
+  {
+    "id": "C001",
+    "prompt": "A samurai and a monk meditating in cel-shaded style",
+    "clip_score": 0.3531528115272522,
+    "img_path": "results/composer/C001.png"
+  },
+  {
+    "id": "C002",
+    "prompt": "A ballerina and a robot dancing in Pixar style",
+    "clip_score": 0.37308281660079956,
+    "img_path": "results/composer/C002.png"
+  },
+  {
+    "id": "C003",
+    "prompt": "A knight and a wizard casting spells in medieval style",
+    "clip_score": 0.3259601593017578,
+    "img_path": "results/composer/C003.png"
+  },
+  {
+    "id": "C004",
+    "prompt": "A chef and a waiter serving food in culinary style",
+    "clip_score": 0.2849982976913452,
+    "img_path": "results/composer/C004.png"
+  },
+  {
+    "id": "C005",
+    "prompt": "A painter and a sculptor creating art in renaissance style",
+    "clip_score": 0.28854143619537354,
+    "img_path": "results/composer/C005.png"
+  },
+  {
+    "id": "C006",
+    "prompt": "A astronaut and a alien communicating in sci-fi style",
+    "clip_score": 0.3114381432533264,
+    "img_path": "results/composer/C006.png"
+  },
+  {
+    "id": "C007",
+    "prompt": "A ninja and a spy sneaking in noir style",
+    "clip_score": 0.30170828104019165,
+    "img_path": "results/composer/C007.png"
+  },
+  {
+    "id": "C008",
+    "prompt": "A cowboy and a sheriff in western style",
+    "clip_score": 0.29998070001602173,
+    "img_path": "results/composer/C008.png"
+  },
+  {
+    "id": "C009",
+    "prompt": "A pirate and a mermaid in nautical style",
+    "clip_score": 0.35656970739364624,
+    "img_path": "results/composer/C009.png"
+  },
+  {
+    "id": "C010",
+    "prompt": "A superhero and a villain fighting in comic book style",
+    "clip_score": 0.29891082644462585,
+    "img_path": "results/composer/C010.png"
+  },
+  {
+    "id": "D001",
+    "prompt": "A lion walking next to a bus stop in neo-noir style",
+    "clip_score": 0.36661410331726074,
+    "img_path": "results/composer/D001.png"
+  },
+  {
+    "id": "D002",
+    "prompt": "A frog on a skyscraper in graffiti street art style",
+    "clip_score": 0.3894082307815552,
+    "img_path": "results/composer/D002.png"
+  },
+  {
+    "id": "D003",
+    "prompt": "A elephant in a subway station in urban style",
+    "clip_score": 0.3628583252429962,
+    "img_path": "results/composer/D003.png"
+  },
+  {
+    "id": "D004",
+    "prompt": "A giraffe looking through a window in modern style",
+    "clip_score": 0.35478562116622925,
+    "img_path": "results/composer/D004.png"
+  },
+  {
+    "id": "D005",
+    "prompt": "A penguin in a coffee shop in hipster style",
+    "clip_score": 0.3727279305458069,
+    "img_path": "results/composer/D005.png"
+  },
+  {
+    "id": "D006",
+    "prompt": "A bear in a library in vintage style",
+    "clip_score": 0.36812639236450195,
+    "img_path": "results/composer/D006.png"
+  },
+  {
+    "id": "D007",
+    "prompt": "A wolf in a train station in industrial style",
+    "clip_score": 0.3410329818725586,
+    "img_path": "results/composer/D007.png"
+  },
+  {
+    "id": "D008",
+    "prompt": "A deer in a shopping mall in consumerist style",
+    "clip_score": 0.38468295335769653,
+    "img_path": "results/composer/D008.png"
+  },
+  {
+    "id": "D009",
+    "prompt": "A fox in a park in naturalist style",
+    "clip_score": 0.31815361976623535,
+    "img_path": "results/composer/D009.png"
+  },
+  {
+    "id": "D010",
+    "prompt": "A rabbit in a garden in cottage style",
+    "clip_score": 0.31984883546829224,
+    "img_path": "results/composer/D010.png"
+  },
+  {
+    "id": "E001",
+    "prompt": "Time and memory portrayed in cubist art",
+    "clip_score": 0.33601194620132446,
+    "img_path": "results/composer/E001.png"
+  },
+  {
+    "id": "E002",
+    "prompt": "A quantum computer and a butterfly in 90s anime style",
+    "clip_score": 0.3258628249168396,
+    "img_path": "results/composer/E002.png"
+  },
+  {
+    "id": "E003",
+    "prompt": "Dreams and reality merging in surrealist style",
+    "clip_score": 0.2912657856941223,
+    "img_path": "results/composer/E003.png"
+  },
+  {
+    "id": "E004",
+    "prompt": "Love and hate represented in expressionist style",
+    "clip_score": 0.2662561535835266,
+    "img_path": "results/composer/E004.png"
+  },
+  {
+    "id": "E005",
+    "prompt": "A black hole and a star in cosmic style",
+    "clip_score": 0.3119409680366516,
+    "img_path": "results/composer/E005.png"
+  },
+  {
+    "id": "E006",
+    "prompt": "Chaos and order in abstract style",
+    "clip_score": 0.2928587794303894,
+    "img_path": "results/composer/E006.png"
+  },
+  {
+    "id": "E007",
+    "prompt": "A virus and a cell in microscopic style",
+    "clip_score": 0.2832469940185547,
+    "img_path": "results/composer/E007.png"
+  },
+  {
+    "id": "E008",
+    "prompt": "Light and shadow in chiaroscuro style",
+    "clip_score": 0.296606183052063,
+    "img_path": "results/composer/E008.png"
+  },
+  {
+    "id": "E009",
+    "prompt": "A brain and a computer in neural style",
+    "clip_score": 0.2766987085342407,
+    "img_path": "results/composer/E009.png"
+  },
+  {
+    "id": "E010",
+    "prompt": "Fire and ice in elemental style",
+    "clip_score": 0.30328190326690674,
+    "img_path": "results/composer/E010.png"
+  }
+]
