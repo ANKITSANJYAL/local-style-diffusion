@@ -102,8 +102,8 @@ jupyter notebook notebooks/demo.ipynb
 ```bibtex
 @article{lpa2024,
   title={Local Prompt Adaptation for Style-Consistent Multi-Object Generation in Diffusion Models},
-  author={Your Name},
-  journal={arXiv preprint},
+  author={Ankit Sanjyal},
+  journal={	arXiv:2507.20094},
   year={2024}
 }
 ```
