@@ -8,7 +8,7 @@ This repository contains the implementation of Local Prompt Adaptation (LPA), a 
 
 ## Project Structure
 ```
-local-style-diffusion/
+lp1/
 ├── README.md                           # This file
 ├── requirements.txt                    # Python dependencies
 ├── configs/                           # Configuration files
