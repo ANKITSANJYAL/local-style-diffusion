@@ -1,0 +1,5 @@
+models:
+  sdxl:
+    repo_id: "stabilityai/stable-diffusion-xl-base-1.0"
+  sd15:
+    repo_id: "runwayml/stable-diffusion-v1-5"

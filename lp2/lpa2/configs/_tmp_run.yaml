@@ -1,0 +1,25 @@
+seed: 42
+device: mps
+dtype: fp16
+steps: 30
+guidance_scale: 6.5
+num_images_per_prompt: 3
+model:
+  name: sd15
+  scheduler: dpm
+schedule:
+  preset: lpa_full
+  timestep_window:
+  - 400
+  - 600
+  parser: naive
+data:
+  prompts_file: lpa2/configs/prompts/prompts_short.json
+  negative_prompt: ''
+  output_root: artifacts/runs
+metrics:
+  clip: true
+  lpips: true
+  diversity_lpips: true
+human_study:
+  per_prompt_n: 1

@@ -1,0 +1,53 @@
+# General run settings
+seed: 42
+device: "mps"       # "mps" for Apple, "cpu" for fallback
+dtype: "fp16"       # or "fp32"
+steps: 30
+guidance_scale: 6.5
+num_images_per_prompt: 3
+
+# Model settings
+model:
+  name: "sd15"
+  scheduler: "dpm"  # "dpm" | "euler_a"
+
+# Sweep settings
+ablation:
+  source_prompts: "lpa2/configs/prompts/prompts_short.json"   # full list to slice from
+  n_prompts: 50
+  presets:
+    - "lpa_early_style_late"
+    - "lpa_mid_only"
+    - "lpa_late_only"
+    - "lpa_full"
+  windows:
+    - [200, 700]
+    - [300, 650]
+    - [400, 600]
+  parsers:
+    - "spacy"
+    - "pos"
+    - "naive"
+  out_csv: "artifacts/runs/ablation_summary.csv"
+
+# Default (can be overridden by ablation sweep)
+schedule:
+  preset: "vanilla"
+  timestep_window: [200, 700]
+  parser: "spacy"  # "spacy" | "pos" | "naive"
+
+# Data
+data:
+  prompts_file: "lpa2/configs/prompts/prompts_short.json"   # overridden per sweep
+  negative_prompt: ""
+  output_root: "artifacts/runs"
+
+# Metrics
+metrics:
+  clip: true
+  lpips: true
+  diversity_lpips: true
+
+# Human study settings
+human_study:
+  per_prompt_n: 1

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lpa2"
+version = "0.1.0"
+description = "Local Prompt Adaptation (training-free style/content token routing) with benchmark-grade runners."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.1",
+  "diffusers>=0.29.0",
+  "transformers>=4.41.0",
+  "accelerate>=0.33.0",
+  "omegaconf>=2.3.0",
+  "Pillow>=10.0.0",
+  "numpy>=1.24",
+  "tqdm>=4.66",
+  "lpips>=0.1.4",
+  "clip @ git+https://github.com/openai/CLIP.git",
+  "spacy>=3.7.4",
+  "matplotlib>=3.8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["lpa2*"]
+exclude = ["artifacts*", "tests*", "scripts*", ".*", "__pycache__"]
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","I","UP","B","W","ARG","C4","SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_ignores = true
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

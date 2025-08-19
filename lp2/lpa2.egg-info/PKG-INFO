@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: lpa2
+Version: 0.1.0
+Summary: Local Prompt Adaptation (training-free style/content token routing) with benchmark-grade runners.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.1
+Requires-Dist: diffusers>=0.29.0
+Requires-Dist: transformers>=4.41.0
+Requires-Dist: accelerate>=0.33.0
+Requires-Dist: omegaconf>=2.3.0
+Requires-Dist: Pillow>=10.0.0
+Requires-Dist: numpy>=1.24
+Requires-Dist: tqdm>=4.66
+Requires-Dist: lpips>=0.1.4
+Requires-Dist: clip@ git+https://github.com/openai/CLIP.git
+Requires-Dist: spacy>=3.7.4
+Requires-Dist: matplotlib>=3.8.0
+Dynamic: license-file
+
+# LPA2 (Local Prompt Adaptation) — Benchmark-Grade Repo
+
+This repo houses a training‑free method to route **style vs. content** prompt tokens to different UNet stages and timesteps in diffusion models (SDXL, SD1.5). It includes one‑command generation, metrics, ablations, human‑study grids, and benchmark adapters.
+
+## Quickstart
+```bash
+make setup
+make run
+make eval RUN=<run_id_from_stdout>

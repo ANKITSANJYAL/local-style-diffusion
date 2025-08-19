@@ -1,0 +1,6 @@
+presets:
+  vanilla:                { route_style: [], route_content: [] }
+  lpa_early_style_late:   { route_style: ["up1","up2"], route_content: ["down1","down2","mid"] }
+  lpa_mid_only:           { route_style: ["mid"], route_content: ["down2","up1"] }
+  lpa_late_only:          { route_style: ["up2"], route_content: ["down1","mid"] }
+  lpa_full:               { route_style: ["down1","down2","mid","up1","up2"], route_content: ["down1","down2","mid","up1","up2"] }

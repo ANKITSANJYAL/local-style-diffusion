@@ -1,0 +1,28 @@
+seed: 42
+device: "mps"       # "mps" for Apple, or "cpu"
+dtype: "fp16"          # or "fp32"
+steps: 30
+guidance_scale: 6.5
+num_images_per_prompt: 3
+
+model:
+  name: "sd15"
+  scheduler: "dpm"     # "dpm" | "euler_a"
+
+schedule:
+  preset: "vanilla"
+  timestep_window: [200, 700]
+  parser: "spacy"                  # "spacy" | "pos" | "naive"
+
+data:
+  prompts_file: "lpa2/configs/prompts/prompts_50.json"
+  negative_prompt: ""
+  output_root: "artifacts/runs"
+
+metrics:
+  clip: true
+  lpips: true
+  diversity_lpips: true
+
+human_study:
+  per_prompt_n: 1
